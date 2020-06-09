@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
+import HomePage from './Pages/homepage';
+import {Link,Route,Switch} from 'react-router-dom'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     
+     <Switch>
+       <Route path="Home" component={HomePage}/>
+     </Switch>
     </div>
   );
 }
