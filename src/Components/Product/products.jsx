@@ -1,17 +1,21 @@
 import React from 'react';
 import { Card, CardActionArea, CardActions, CardContent, Typography, Button } from '@material-ui/core';
-import {Link,useRouteMatch} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './product.scss';
 
 const Product = (props) => {
-   const {url}=useRouteMatch();
+
     return (
         <div className="productDiv">
             <Card>
-
+      <Link to={`/${props.name}`}>
                 <CardActionArea>
+                    
                      <Typography>
+                     <Link to={`/${props.name}`}>
                          <img  src={`${props.href}`} height="150px" width="250px" alt="Products view"/>
+
+                         </Link>
                      </Typography>
                     <CardContent>
                         <Typography gutterBottom component="h2" id="topo">
@@ -23,8 +27,10 @@ const Product = (props) => {
                     </CardContent>
 
                 </CardActionArea>
+                </Link>
+            
                 <CardActions>
-                    <Link to={`${url}/${props.name}`}>
+                    <Link to={`/${props.name}`}>
                      <Button size="small" color="primary">
                          View Product Details
                      </Button>

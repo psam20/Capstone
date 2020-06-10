@@ -16,7 +16,7 @@ const Header = ()=>{
   return(
     <div className="nav-bar">
        <div className="logo">
-          <Link to="/Home">
+          <Link to="/">
           <img src="https://seeklogo.com/images/S/shopify-logo-3CDF9B62B3-seeklogo.com.png"alt="company logo" height="40px" width="100px" />
           </Link>
         </div>
@@ -25,7 +25,7 @@ const Header = ()=>{
           <Menu id="Menu"  onClick={handleToggle}fontSize="large" />
         
           <ul className={`collapsed ${isExpanded ? " is-expanded " : " "}`}>
-            <Link  className="active" to="/Home">
+            <Link  className="active" to="/">
               <li>Home</li>
             </Link>
             <Link      className="active" to="/About">
