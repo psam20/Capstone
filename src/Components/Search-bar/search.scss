@@ -1,0 +1,42 @@
+.search-bar{
+    width:70%;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: lightgrey;
+   display: inline-block;
+
+    .search-input{
+        -webkit-appearance: none;
+        border: none;
+        outline: none;
+        position: relative;
+        
+        left: -25px;
+        background-color: lightgrey;
+        padding: 10px;
+        width: 80%;
+        font-size: 20px;
+        line-height: 20px;
+        
+    }
+    button{
+        outline: none;
+        border: none;
+        background-color:unset;
+        position: relative;
+        right: 0;
+    }
+}
+@media only screen and (max-width: 600px) {
+
+    .search-bar{
+        width: 100%;
+        .search-input{
+            width: 70%;
+        }
+        
+    }
+   
+}
