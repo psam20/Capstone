@@ -1,0 +1,13 @@
+h3{
+    color: blue;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+p{
+    color: brown;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+}
