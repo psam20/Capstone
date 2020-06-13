@@ -11,12 +11,12 @@ const Product = (props) => {
       <Link to={`/${props.name}`}>
                 <CardActionArea>
                     
-                     <Typography>
+                     {/* <Typography> */}
                      <Link to={`/${props.name}`}>
                          <img  src={`${props.href}`} height="150px" width="250px" alt="Products view"/>
 
                          </Link>
-                     </Typography>
+                     {/* </Typography> */}
                     <CardContent>
                         <Typography gutterBottom component="h2" id="topo">
                             {props.name}
