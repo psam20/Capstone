@@ -25,10 +25,10 @@ const Header = ()=>{
           <Menu id="Menu"  onClick={handleToggle}fontSize="large" />
         
           <ul className={`collapsed ${isExpanded ? " is-expanded " : " "}`}>
-            <Link  className="active" to="/">
+            <Link className="active" to="/">
               <li>Home</li>
             </Link>
-            <Link      className="active" to="/About">
+            <Link className="active" to="/About">
               <li>About</li>
             </Link>
             <Link    className="active" to="/Products">
