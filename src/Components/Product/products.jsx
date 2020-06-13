@@ -12,10 +12,10 @@ const Product = (props) => {
                 <CardActionArea>
                     
                      {/* <Typography> */}
-                     <Link to={`/${props.name}`}>
+                     {/* <Link to={`/${props.name}`}> */}
                          <img  src={`${props.href}`} height="150px" width="250px" alt="Products view"/>
 
-                         </Link>
+                         {/* </Link> */}
                      {/* </Typography> */}
                     <CardContent>
                         <Typography gutterBottom component="h2" id="topo">
