@@ -2,7 +2,7 @@ import React from 'react';
 import './About.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-export default class About extends React.Component{
+class About extends React.Component{
     constructor(){
         super();
         this.state={
@@ -36,3 +36,5 @@ export default class About extends React.Component{
              )
     }
 } 
+
+export default About;

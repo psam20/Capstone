@@ -9,7 +9,7 @@ const Product = (props) => {
         <div className="productDiv">
             <Card>
       <Link to={`/${props.name}`}>
-                <CardActionArea>
+                <CardActionArea width="5rem">
                     
                      {/* <Typography> */}
                      {/* <Link to={`/${props.name}`}> */}
@@ -21,7 +21,7 @@ const Product = (props) => {
                         <Typography gutterBottom component="h2" id="topo">
                             {props.name}
                         </Typography>
-                        <Typography  color="textSecondary"id="topo" component="p">
+                        <Typography  color="textSecondary" id="topo" component="p">
                            {props.description}
                         </Typography>
                     </CardContent>
