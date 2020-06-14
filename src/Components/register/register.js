@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom';
 import './register.css'
 
-class register extends React.Component{
+class Register extends React.Component{
 
     constructor(props) {
         super(props);
@@ -157,4 +157,16 @@ class register extends React.Component{
     }
 }
 
-export default register;
+function mapState(state) {
+  const { registering } = state.registration;
+  return { registering };
+}
+
+const actionCreators = {
+  register: userActions.register
+}
+
+const connectedRegisterPage = connect(mapState, actionCreators)(Register);
+export { connectedRegisterPage as Register};
+
+//export default register;

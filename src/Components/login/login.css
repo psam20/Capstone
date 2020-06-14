@@ -13,3 +13,7 @@ h2{
 .btn{
     width: 100%;
 }
+
+.help-block { font-size: 15px;
+    color: red;
+}
