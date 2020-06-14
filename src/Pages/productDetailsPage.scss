@@ -1,0 +1,26 @@
+
+.productDetails{
+    width: 80%;
+    margin: 20px;
+    .card{
+       
+        #topo{
+            height: 40px;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+        #topo1{
+            padding: 10px;
+            margin-bottom: 5px;
+            height: 100px;
+        }
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+      
+        width: 100%;
+        flex-wrap: wrap;
+        
+    }
+}
