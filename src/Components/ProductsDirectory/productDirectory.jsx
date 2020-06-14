@@ -20,7 +20,7 @@ const ProductDirectory = ({dispatch,filteredProducts}) =>{
                  {
                      
                      filteredProducts.map( ({id,...otherProps})=>(
-                         <Product key={id} {...otherProps}/>
+                         <Product key={id} id={id} {...otherProps}/>
                      ))
                  }
            </div>

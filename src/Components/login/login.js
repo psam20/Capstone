@@ -1,7 +1,7 @@
 import React from 'react';
 import UserService from "../../Api/UserApi";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './login.css'
 
 class login extends React.Component{
