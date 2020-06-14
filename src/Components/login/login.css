@@ -1,0 +1,15 @@
+.col-md-4{
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    color: darkgreen;
+}
+
+.btn{
+    width: 100%;
+}

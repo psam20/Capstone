@@ -1,0 +1,31 @@
+{
+  "user": [
+    {
+      "firstName": "rahul",
+      "lastName": "sharma",
+      "email": "rs@gmail.com",
+      "password": "123456",
+      "location": "goa",
+      "mobile": "7967486787",
+      "id": "wdhdkj"
+    },
+    {
+      "firstName": "Shreya",
+      "lastName": "Verma",
+      "email": "sv@gmail.com",
+      "password": "525265",
+      "location": "Pune",
+      "mobile": "9174785965",
+      "id": "jhedkh"
+    },
+    {
+      "firstName": "nfbgnb",
+      "email": "jhj@nj.com",
+      "lastName": "hjgjmhg",
+      "password": "978576",
+      "location": "pune",
+      "value": false,
+      "id": "npqJ4Qa"
+    }
+  ]
+}
