@@ -1,9 +1,11 @@
 import React from 'react';
-import UserService from "../../Api/UserApi";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './login.css'
+import { UserService } from "../../Api/UserApi";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './login.css';
+import { connect } from 'react-redux';
+import { userActions } from '../../actions/UserActions'
 
-class Login extends React.Component{
+class login extends React.Component{
 
     constructor(props) {
         super(props);
@@ -103,7 +105,7 @@ const actionCreators = {
     logout: userActions.logout
 };
 
-const connectedLoginPage = connect(mapState, actionCreators)(Login);
-export { connectedLoginPage as Login };
+const connectedLoginPage = connect(mapState, actionCreators)(login);
+export { connectedLoginPage as login };
 
 //export default login;

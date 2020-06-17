@@ -1,10 +1,12 @@
 import React from 'react';
-import UserService from "../../Api/UserApi";
+import { UserService } from "../../Api/UserApi";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { userActions } from '../../actions/UserActions';
 import './register.css'
 
-class Register extends React.Component{
+class register extends React.Component{
 
     constructor(props) {
         super(props);
@@ -166,7 +168,7 @@ const actionCreators = {
   register: userActions.register
 }
 
-const connectedRegisterPage = connect(mapState, actionCreators)(Register);
-export { connectedRegisterPage as Register};
+const connectedRegisterPage = connect(mapState, actionCreators)(register);
+export { connectedRegisterPage as register};
 
 //export default register;

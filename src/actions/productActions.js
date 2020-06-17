@@ -1,6 +1,5 @@
 import c from './constants';
 
-
 export const fetchProductsBegin = ()=> ({
     type: c.FETCH_PRODUCTS_BEGIN
 });
@@ -14,8 +13,6 @@ export const fetchProductsFailure =( error) => ({
     type:c.FETCH_PRODUCTS_FAILURE,
     payload:error,
 })
-
-
 
 export const searchProducts= (products,value)=>(dispatch) =>{
     const val=value.searchInput;

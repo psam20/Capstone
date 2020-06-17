@@ -31,7 +31,7 @@ const Header = ()=>{
             <Link className="active" to="/About">
               <li>About</li>
             </Link>
-            <Link className="active" to="/Products">
+            <Link className="active" to="/chart">
               <li>Top viewed Products</li>
             </Link>
             <Link to="/AddProduct">
