@@ -1,16 +1,27 @@
 import React from 'react';
 
 import {Menu,AddShoppingCart} from '@material-ui/icons';
-import {Link} from 'react-router-dom';
+import {Link,useHistory} from 'react-router-dom';
+import {signOutUser} from '../../actions/usersAction'
+import {connect} from 'react-redux';
 import './navbar.scss';
-const Header = ()=>{
- 
+const Header = ({loginUsers,auth,logOut})=>{
+    console.log(loginUsers);
+    console.log(auth);
+    const history=useHistory();
+    // const auth=loginUsers.auth;
   const [isExpanded, setisExpanded]= React.useState(false);
    const handleToggle=(e)=>{
       
        e.preventDefault();
        setisExpanded(!isExpanded)
        console.log(isExpanded);
+   }
+   const handleLogout =(e)=>{
+          if(auth===true){
+            logOut()
+            return history.push('/login')
+          }
    }
    
   return(
@@ -33,17 +44,21 @@ const Header = ()=>{
             </Link>
          
             <Link to="/AddProduct">
-                <li>Add Products</li>
+              {
+                (auth===true)?
+                <li>Add Products</li>:""
+              }
             </Link>
-            <Link to="/register">
-              <li>Register</li>
+           
+            <Link to="/login" onClick={(e)=>handleLogout(e)}>
+              {/* <li>Login</li> */}
+              
+              {
+                (auth===true)?
+              <li>LogOut</li>:<li>LogIn</li>
+              } 
             </Link>
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
-            <Link to="/sign-in">
-                <li>Log Out</li>
-            </Link>
+          
           </ul>
         </nav>
         <nav className="nav1">
@@ -59,6 +74,11 @@ const Header = ()=>{
   )
 }
 
-   
- 
-export default Header;
+   const MapStateToProps=(state)=>({
+     loginUsers:state.user.currentUser,
+     auth:state.user.authBool
+   })
+ const MapDispatchToProps=(dispatch)=>({
+   logOut:()=>dispatch(signOutUser())
+ })
+export default  connect(MapStateToProps,MapDispatchToProps)(Header);

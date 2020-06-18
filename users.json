@@ -26,6 +26,15 @@
       "location": "pune",
       "value": false,
       "id": "npqJ4Qa"
+    },
+    {
+      "firstName": "Kishan",
+      "email": "kg@gmail.com",
+      "lastName": "Gupta",
+      "password": "1",
+      "location": "Bangalore",
+      "value": false,
+      "id": "sw4FSg_"
     }
   ]
 }
