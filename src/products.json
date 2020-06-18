@@ -344,46 +344,6 @@
           "text": "Low features at Expensive price."
         }
       ]
-    },
-    {
-      "id": 18,
-      "name": "Iphone 7",
-      "description": "hello world",
-      "manufacturer": "Apple",
-      "price": 12000,
-      "quantity": 12,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fpwa%20features%20in%20prod%20with%20apple%20icon.png?alt=media&token=b2f864f1-67ad-4dc0-bf37-143b64bca0c8",
-      "details": [
-        {
-          "text": "this is apple product"
-        },
-        {
-          "text": "hhjhjjh"
-        },
-        {
-          "text": "hjjhjhhj"
-        }
-      ]
-    },
-    {
-      "id": 19,
-      "name": "sdfgh",
-      "description": "sdfgh",
-      "manufacturer": "sdfg",
-      "price": 234,
-      "quantity": 23,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2FScreenshot%20from%202020-02-02%2023-47-18.png?alt=media&token=805b0d69-73a9-4f25-9f36-01e10945eb19",
-      "details": [
-        {
-          "text": "asdfxgch"
-        },
-        {
-          "text": "dzfxgch"
-        },
-        {
-          "text": "fxdcghj"
-        }
-      ]
     }
   ]
 }

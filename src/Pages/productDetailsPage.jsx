@@ -14,7 +14,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const ProductDetailsPage = ({ filtered, deleteProducts }) => {
+const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
 
     const [open, setOpen] = React.useState(false);
    
@@ -62,14 +62,16 @@ const ProductDetailsPage = ({ filtered, deleteProducts }) => {
                     <br />
                     <div className="buttons">
                         <Link to={`/EditProduct/${selectedProduct.id}`}>
+                            {(auth===true)?
                         <Button
                             variant="contained"
                             color="primary"
                             startIcon={<EditIcon />}
                         >
                             Edit Product
-      </Button></Link>
-                        <Button
+      </Button>:""}
+      </Link>
+                       {(auth===true)?<Button
                             variant="contained"
                             color="secondary"
                             onClick={e => 
@@ -79,7 +81,7 @@ const ProductDetailsPage = ({ filtered, deleteProducts }) => {
                             startIcon={<DeleteIcon />}
                         >
                             Delete
-      </Button>
+      </Button>:""}
                         <Dialog
                             open={open}
                             TransitionComponent={Transition}
@@ -154,6 +156,7 @@ const ProductDetailsPage = ({ filtered, deleteProducts }) => {
 const MapStateToProps = (state => ({
     products: state.products.products,
     filtered: state.products.filteredProducts,
+    auth:state.user.authBool,
 }))
 
 const MapDispatchToProps = (dispatch) => {
