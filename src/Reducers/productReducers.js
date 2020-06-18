@@ -21,8 +21,20 @@ export default function productsReducer(state=initialState,action) {
         case constants.SEARCH_PRODUCT:
             return {...state,searchInput:action.payload.input,filteredProducts:action.payload.filteredItems}
     
-     
-            
+        case constants.DELETE_PRODUCT:
+            return {
+                ...state,products:[state.products.filter(p=> p.id !== action.payload.id)]
+            }
+         case constants.EDIT_PRODUCT:
+             return {
+                 ...state,products:[state.products.map(p => {
+                     
+                     if(p.id === action.payload._id){
+                         return action.payload.pro
+                     }
+                     return p
+                 })]
+             }   
         default:
             return state
     }

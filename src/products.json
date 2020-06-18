@@ -1,33 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Realme 3",
-      "description": "(Dynamic Black, 3GB RAM, 32GB Storage)",
-      "manufacturer": "Sky Li",
-      "price": "15000",
-      "quantity": "800",
-      "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSq9_coI2dlwltnSCwfiuoIrTYKFQb4of1Rf-2VgAKpGr00TDd8&usqp=CAU",
-      "details": [
-        {
-          "text": "13MP+2MP dual rear camera with f1.8 + f2.4, photo editing, sensor size/pixel data: 1.12 micrometer + 1.75 micrometer, consecutive capture mode: 20 in row, bokeh mode, video: 720p, 1080p, SAR auto, sensor type: CMOS | 13MP front camera"
-        },
-        {
-          "text": "15.7988 centimeters (6.22-inch) HD+ multi-touch capacitive touchscreen with 1520 x 720 pixels resolution, 271 ppi pixel density and 16.7M color support"
-        },
-        {
-          "text": "Memory, Storage & SIM: 3GB RAM | 32GB internal memory expandable up to 256GB | Dual SIM dual-standby (4G+4G)"
-        },
-        {
-          "text": "Android Pie v9.0 operating system with 2.1GHz MediaTek Helio P70 AI octa core processor"
-        },
-        {
-          "text": "Box also includes: Adapter, micro-USB cable, important information booklet with warranty card, quick guide, SIM card tool, screen protect film and case"
-        }
-      ],
-      "count": 9
-    },
-    {
       "id": 2,
       "name": "Mi Gaming Laptop",
       "description": "With 144Hz Display, Up to 16GB RAM",
@@ -322,14 +295,95 @@
       "count": 1
     },
     {
-      "name": "gfgfg",
-      "description": "gcgfh",
-      "manufacturer": "fhgfngf",
-      "price": "6767",
-      "quantity": "545",
-      "href": null,
-      "value": false,
-      "id": 13
+      "id": 15,
+      "name": "Red MI Note 3 Pro",
+      "description": "Worst cheap product",
+      "manufacturer": "Xiaomi",
+      "price": 12000,
+      "quantity": 1,
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload.jpeg?alt=media&token=b1a27730-37de-4c57-aa9e-fe933efa34ba",
+      "details": [
+        {
+          "text": "Chinese Product,Don't Buy."
+        },
+        {
+          "text": "please throw this phone as hard as you can SO THAT IT goes back to china and explode"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Red Mi Note 7 Pro",
+      "description": "Another Chinese PHone Made in India",
+      "manufacturer": "Xiaomi",
+      "price": 13000,
+      "quantity": 1,
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fxiaomi-redmi-note-7-pro-1.jpg?alt=media&token=c3caa350-f81b-4edf-96d1-c1c2e668813e",
+      "details": [
+        {
+          "text": "Throw this Phone Back to china , 100% china will die of shame."
+        },
+        {
+          "text": "This Phone includes Cheapness that is availabe all over communist chinese."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Iphone 11 Pro",
+      "description": "Most Expensive Phone ,You Don't Have to sell Your Kidney.Just apply for loan",
+      "manufacturer": "Apple",
+      "price": 100000,
+      "quantity": 1,
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload%20iphone.jpeg?alt=media&token=59dc1655-4b5a-4895-8c5c-1d7f280c72a6",
+      "details": [
+        {
+          "text": "Name and Brand is Enough."
+        },
+        {
+          "text": "Low features at Expensive price."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Iphone 7",
+      "description": "hello world",
+      "manufacturer": "Apple",
+      "price": 12000,
+      "quantity": 12,
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fpwa%20features%20in%20prod%20with%20apple%20icon.png?alt=media&token=b2f864f1-67ad-4dc0-bf37-143b64bca0c8",
+      "details": [
+        {
+          "text": "this is apple product"
+        },
+        {
+          "text": "hhjhjjh"
+        },
+        {
+          "text": "hjjhjhhj"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "sdfgh",
+      "description": "sdfgh",
+      "manufacturer": "sdfg",
+      "price": 234,
+      "quantity": 23,
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2FScreenshot%20from%202020-02-02%2023-47-18.png?alt=media&token=805b0d69-73a9-4f25-9f36-01e10945eb19",
+      "details": [
+        {
+          "text": "asdfxgch"
+        },
+        {
+          "text": "dzfxgch"
+        },
+        {
+          "text": "fxdcghj"
+        }
+      ]
     }
   ]
 }

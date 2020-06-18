@@ -13,7 +13,7 @@ const Product = (props) => {
                        
                             <Typography>
 
-                                <img src={`${props.href}`} height="150px" width="250px" alt="Products view" />
+                                <img src={`${props.href}`} height="150px" width="100%" alt="Products view" />
                             </Typography>
                      
                         <CardContent>
