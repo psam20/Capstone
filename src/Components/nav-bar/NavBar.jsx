@@ -20,7 +20,7 @@ const Header = ({loginUsers,auth,logOut})=>{
    const handleLogout =(e)=>{
           if(auth===true){
             logOut()
-            return history.push('/login')
+            return history.push('/')
           }
    }
    
