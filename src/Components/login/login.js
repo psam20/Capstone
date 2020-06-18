@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link , Redirect} from 'react-router-dom';
 import {setCurrentUser} from '../../actions/usersAction';
 import UserService from "../../Api/UserApi";
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -52,10 +52,11 @@ class Login extends React.Component{
                     auth:true
                 }
               this.props.authUser(loginUser);
-             return this.props.history.push('/');
+               return (<Redirect to="/"/>)
               
            }
        }
+       
        alert("Incorrect PassWord , Please Enter Correct Password...")
        console.log("unsuccessfull")
 
