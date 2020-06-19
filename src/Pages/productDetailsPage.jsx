@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useParams, useHistory, Link} from 'react-router-dom'
 import { Grid, Card, Typography, Button, Dialog, DialogActions, Slide, DialogTitle, DialogContent, DialogContentText } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -17,6 +17,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
 
     const [open, setOpen] = React.useState(false);
+            const [count, setCount] = useState(0);
+    const [flag, setFlag] = useState(0);
    
     const handleClickOpen = () => {
         setOpen(true);
@@ -33,6 +35,25 @@ const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
     // console.log(selectedProduct);
 
     // console.log(selectedProduct.details)
+          
+     useEffect(()=>{
+        axios.get(`http://localhost:3201/Products/${i[0]}`)
+          .then(resp => {
+             setCount(resp.data.count+1)
+             setFlag(1);
+             console.log(count);
+             console.log(resp.data);
+            })
+            if(flag===1){
+             fetch(`http://localhost:3201/Products/${i[0]}`, {
+                 headers: { "Content-Type": "application/json; charset=utf-8" },
+                 method: 'PATCH',
+                 body: JSON.stringify({
+                   count: count
+             })
+         })
+        }
+    })
 
     const deletePro = (e, id) => {
         e.preventDefault();
@@ -44,7 +65,6 @@ const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
 
     return (
         <div className="productDetails">
-
 
             <Grid container spacing={4} justify="space-between">
                 <Grid item xs={12} lg={4} sm={6} md={6} >
@@ -69,7 +89,9 @@ const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
                             startIcon={<EditIcon />}
                         >
                             Edit Product
-      </Button>:""}
+
+      </Button>
+                    
       </Link>
                        {(auth===true)?<Button
                             variant="contained"
@@ -114,6 +136,7 @@ const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
                         <h2>Features and More Details</h2>
 
                         <ul>
+
                               {
                                   selectedProduct.details.map((d,id)=>(
                                       <li key={id}>
@@ -129,19 +152,23 @@ const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
 
                             <h4>Price : Rs.{selectedProduct.price}</h4>
 
+
                     </div>
                     <div>
                         <Button
+
                             variant="contained"
                             color="primary"
                             startIcon={<ShoppingBasketIcon />}
                         >
                             Buy Product
                         </Button>
+
                         <br /><br />
                         <Button
                             variant="contained"
                             style={{ backgroundColor: "lightgrey" }}
+
 
                             startIcon={<ShoppingCartIcon />}
                         >

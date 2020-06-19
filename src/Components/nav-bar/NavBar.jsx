@@ -1,9 +1,11 @@
 import React from 'react';
 
 import {Menu,AddShoppingCart} from '@material-ui/icons';
+
 import {Link,useHistory} from 'react-router-dom';
 import {signOutUser} from '../../actions/usersAction'
 import {connect} from 'react-redux';
+
 import './navbar.scss';
 const Header = ({loginUsers,auth,logOut})=>{
     console.log(loginUsers);

@@ -12,6 +12,7 @@
     background: lightskyblue;
    
 }
+
 a {
   color: #222;
   opacity: 0.55;
@@ -50,6 +51,11 @@ a:hover {
 
 }
 
+.nav-link{
+  padding:0;
+  margin: 15px;
+}
+
 a:hover{
   background-color: white;
 }
@@ -86,6 +92,11 @@ a:hover{
     padding-top: 20px;
   
    
+  }
+
+  .nav-link{
+    text-align: right;
+    padding: 15px 10px
   }
   .nav1{
     display: inline-block;

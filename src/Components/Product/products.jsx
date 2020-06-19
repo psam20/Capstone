@@ -2,9 +2,35 @@ import React from 'react';
 import { Card, CardActionArea, CardActions, CardContent, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './product.scss';
+import axios from 'axios';
 
-const Product = (props) => {
+class Product extends React.Component{
 
+    constructor(props){
+        super(props);
+        this.state={
+            count:0
+        }
+    }
+
+   proDetails=(id)=>{
+      axios.get(`http://localhost:3201/Products/${id}`)
+      .then(resp => {
+         let ctr=resp.data.count;
+         ctr=ctr+1;
+         this.setState({count:ctr})
+         console.log(ctr);
+      });
+      fetch(`http://localhost:3201/Products/${id}`, {
+           headers: { "Content-Type": "application/json; charset=utf-8" },
+           method: 'PATCH',
+           body: JSON.stringify({
+             count: this.state.count
+       })  
+    })
+   }
+
+    render(){
     return (
         <div className="productDiv">
             <Card>
@@ -32,13 +58,14 @@ const Product = (props) => {
                     <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}>
                         <Button size="small" color="primary">
                             View Product Details
+
                      </Button>
                     </Link>
                 </CardActions>
 
             </Card>
         </div>
-    )
+    )}
 }
 
 export default Product;

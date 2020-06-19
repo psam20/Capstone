@@ -1,7 +1,7 @@
 import React from 'react';
 import UserService from "../../Api/UserApi";
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import { Link } from 'react-router-dom';
+
 import './register.css'
 
 class register extends React.Component{
@@ -156,5 +156,17 @@ class register extends React.Component{
         )
     }
 }
+
+// function mapState(state) {
+//   const { registering } = state.registration;
+//   return { registering };
+// }
+
+// const actionCreators = {
+//   register: userActions.register
+// }
+
+// const connectedRegisterPage = connect(mapState, actionCreators)(register);
+// export { connectedRegisterPage as register};
 
 export default register;

@@ -3,9 +3,11 @@ import {connect} from 'react-redux';
 import {Link , Redirect} from 'react-router-dom';
 import {setCurrentUser} from '../../actions/usersAction';
 import UserService from "../../Api/UserApi";
+
+
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import { Link } from 'react-router-dom';
 import './login.css'
+
 
 class Login extends React.Component{
 
@@ -23,7 +25,7 @@ class Login extends React.Component{
       }
 
     componentDidMount() {
-        UserService.getUser()
+        UserService.getAllUser()
             .then(response => {
                 this.setState({
                     User: response.data
@@ -41,7 +43,12 @@ class Login extends React.Component{
     }
 
     login=(e)=>{
+
+    this.setState({submitted:true})
+     
+
        for(let i=0; i<this.state.User.length;i++){
+
            if(this.state.email===this.state.User[i].email && 
             this.state.password===this.state.User[i].password)
            {
@@ -63,6 +70,7 @@ class Login extends React.Component{
     }
 
     render(){
+        const { email, password, submitted } = this.state;
         return(
             <div className="container">
                 <div className="row-cols-1">
@@ -73,22 +81,31 @@ class Login extends React.Component{
                     <div className="col-md-4 offset-md-4 mt-5">
                         
                         <h2>Login</h2>
-                            <div className="form-group">
+                        <form name="form">
+                            <div className={'form-group' + (submitted && !email ? ' has-error' : '')}>
                                 <label htmlFor="email">Email Id</label>
                                 <input type="email" className="form-control"
-                                value={this.state.email}
+                                value={email}
                                 name = "email"
                                 required
                                 onChange={this.Email} />
-
+                                {submitted && !email &&
+                                    <div className="help-block">Email is required</div>
+                                }
                             </div>
-                            <div className="form-group">
+                            <div className={'form-group' + (this.state.submitted && !this.state.password ? ' has-error' : '')}>
                                 <label htmlFor="password">Password</label>
                                 <input type="password" className="form-control" 
                                 value={this.state.password}
                                 name = "password"
                                 required
                                 onChange={this.Password}/>
+                                {submitted && !password &&
+                                    <div className="help-block">Password is required</div>
+                                }
+                                {submitted && !password.length<6 &&
+                                    <div className="help-block">Password should be 6 characters long</div>
+                                }
 
                             </div>
                             <div className="form-group">
@@ -96,6 +113,7 @@ class Login extends React.Component{
                                     Sign In
                                 </button>
                             </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -108,3 +126,4 @@ const MapDispatchToProps=(dispatch)=>({
 })
 
 export default connect(null,MapDispatchToProps)(Login);
+
