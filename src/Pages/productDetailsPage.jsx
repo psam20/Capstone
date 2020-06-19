@@ -1,27 +1,42 @@
 import React, {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom'
-import { Grid, Card, Typography, Button } from '@material-ui/core';
+import { useParams, useHistory, Link} from 'react-router-dom'
+import { Grid, Card, Typography, Button, Dialog, DialogActions, Slide, DialogTitle, DialogContent, DialogContentText } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
-import axios from 'axios';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { connect } from 'react-redux';
+
+import { deleteProductsAxios } from '../actions/productActions';
 import './productDetailsPage.scss';
 
-const ProductDetailsPage = ({ filtered }) => {
-    const { id } = useParams();
-    console.log(filtered);
-    const [count, setCount] = useState(0);
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
+
+    const [open, setOpen] = React.useState(false);
+            const [count, setCount] = useState(0);
     const [flag, setFlag] = useState(0);
+   
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+    const { id } = useParams();
+    const history = useHistory();
+    // console.log(filtered);
     const i = id.split("+");
-    console.log(i[0]);
+    // console.log(i[0]);
     const selectedProduct = filtered.find(p => p.id.toString() === i[0].toString());
-    console.log(selectedProduct);
+    // console.log(selectedProduct);
 
-    console.log(selectedProduct.details)
-
-    useEffect(()=>{
+    // console.log(selectedProduct.details)
+          
+     useEffect(()=>{
         axios.get(`http://localhost:3201/Products/${i[0]}`)
           .then(resp => {
              setCount(resp.data.count+1)
@@ -40,8 +55,17 @@ const ProductDetailsPage = ({ filtered }) => {
         }
     })
 
+    const deletePro = (e, id) => {
+        e.preventDefault();
+      handleClickOpen();
+      deleteProducts(id);
+      history.push('/');
+    }
+
+
     return (
         <div className="productDetails">
+
             <Grid container spacing={4} justify="space-between">
                 <Grid item xs={12} lg={4} sm={6} md={6} >
                     <Card className="card">
@@ -57,30 +81,62 @@ const ProductDetailsPage = ({ filtered }) => {
                     </Card>
                     <br />
                     <div className="buttons">
+                        <Link to={`/EditProduct/${selectedProduct.id}`}>
+                            {(auth===true)?
                         <Button
                             variant="contained"
                             color="primary"
                             startIcon={<EditIcon />}
                         >
                             Edit Product
+
       </Button>
-                        <Button
+                    
+      </Link>
+                       {(auth===true)?<Button
                             variant="contained"
                             color="secondary"
+                            onClick={e => 
+                                deletePro(e, selectedProduct.id)
 
+                            }
                             startIcon={<DeleteIcon />}
                         >
                             Delete
-      </Button>
+      </Button>:""}
+                        <Dialog
+                            open={open}
+                            TransitionComponent={Transition}
+                            keepMounted
+                            onClose={handleClose}
+                            aria-labelledby="alert-dialog-slide-title"
+                            aria-describedby="alert-dialog-slide-description"
+                        >
+                            <DialogTitle id="alert-dialog-slide-title">{"Products Deltion?"}</DialogTitle>
+                            <DialogContent>
+                                <DialogContentText id="alert-dialog-slide-description">
+                                    Are You Sure You Want to Delete this Product ?
+          </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                                <Button onClick={handleClose} color="primary">
+                                    Disagree
+          </Button>
+                                <Button onClick={handleClose} color="primary">
+                                    Agree
+          </Button>
+                            </DialogActions>
+                        </Dialog>
                     </div>
 
                 </Grid>
                 <Grid item xs={12} lg={8} sm={6} md={6}>
                     <div className="details">
-                        
+
                         <h2>Features and More Details</h2>
-                          
-                          <ul>
+
+                        <ul>
+
                               {
                                   selectedProduct.details.map((d,id)=>(
                                       <li key={id}>
@@ -95,20 +151,24 @@ const ProductDetailsPage = ({ filtered }) => {
                               </ul>
 
                             <h4>Price : Rs.{selectedProduct.price}</h4>
-                        
+
+
                     </div>
                     <div>
-                    <Button
+                        <Button
+
                             variant="contained"
                             color="primary"
                             startIcon={<ShoppingBasketIcon />}
                         >
                             Buy Product
                         </Button>
-                        <br/><br/>
+
+                        <br /><br />
                         <Button
                             variant="contained"
-                            style={{backgroundColor:"lightgrey"}}
+                            style={{ backgroundColor: "lightgrey" }}
+
 
                             startIcon={<ShoppingCartIcon />}
                         >
@@ -123,5 +183,12 @@ const ProductDetailsPage = ({ filtered }) => {
 const MapStateToProps = (state => ({
     products: state.products.products,
     filtered: state.products.filteredProducts,
+    auth:state.user.authBool,
 }))
-export default connect(MapStateToProps, null)(ProductDetailsPage);
+
+const MapDispatchToProps = (dispatch) => {
+    return {
+        deleteProducts: (id) => dispatch(deleteProductsAxios(id)),
+    }
+}
+export default connect(MapStateToProps, MapDispatchToProps)(ProductDetailsPage);

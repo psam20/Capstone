@@ -1,11 +1,11 @@
-h3{
+.head{
     color: blue;
     font-weight: bold;
     padding-left: 20px;
     margin-top: 20px;
 }
 
-p{
+.para{
     color: brown;
     padding-left: 20px;
     padding-right: 20px;

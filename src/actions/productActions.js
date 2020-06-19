@@ -1,4 +1,5 @@
 import c from './constants';
+import Axios from 'axios';
 
 export const fetchProductsBegin = ()=> ({
     type: c.FETCH_PRODUCTS_BEGIN
@@ -13,6 +14,22 @@ export const fetchProductsFailure =( error) => ({
     type:c.FETCH_PRODUCTS_FAILURE,
     payload:error,
 })
+
+export const addProducts=(pro)=>({
+    type:c.ADD_PRODUCT,
+    payload:pro
+})
+export const EditProducts=(pro)=>{
+    console.log(pro);
+    return({
+    type:c.EDIT_PRODUCT,
+    payload:pro
+})}
+export const deleteProducts=(id)=>({
+    type:c.DELETE_PRODUCT,
+    payload:id
+})
+
 
 export const searchProducts= (products,value)=>(dispatch) =>{
     const val=value.searchInput;
@@ -42,3 +59,47 @@ export function fetchProducts() {
 
 }
 
+export  function addProductsAxios(pro){
+  
+    return async dispatch => { 
+        
+      try{
+          await Axios.post("http://localhost:3201/products",pro)
+          dispatch(addProducts(pro));
+              
+      }
+      catch(error){
+          console.log(error)
+  
+  }
+  }}
+
+  export function updateProductsAxios(product){
+      console.log(product);
+    
+      return async dispatch =>{
+          try{
+             await Axios.put(`http://localhost:3201/products/${product.id}`,product)
+             .then(res => console.log(res));
+             dispatch(EditProducts(product))
+          }
+          catch(err){
+              console.log(err);
+          }
+      }
+
+  }
+
+  export function deleteProductsAxios(id) { 
+      return  async dispatch=>{
+    try{
+  
+     await Axios.delete(`http://localhost:3201/products/${id}`)
+             dispatch(deleteProducts(id))
+    }
+    catch(err){
+        console.log(err);
+    }
+  }
+
+}

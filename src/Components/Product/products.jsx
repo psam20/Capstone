@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardActionArea, CardActions, CardContent, Typography, Button } from '@material-ui/core';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './product.scss';
 import axios from 'axios';
 
@@ -34,33 +34,33 @@ class Product extends React.Component{
     return (
         <div className="productDiv">
             <Card>
-      {/* <Link to={`/Products/${this.props.id}+${this.props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}> */}
-                <CardActionArea width="5rem">
-                    
-                     {/* <Typography> */}
-                     {/* <Link to={`/${props.name}`}> */}
-                         <img  src={`${this.props.href}`} height="150px" width="250px" alt="Products view"/>
+            <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}>
+                    <CardActionArea>
+                       
+                            <Typography>
 
-                         {/* </Link> */}
-                     {/* </Typography> */}
-                    <CardContent>
-                        <Typography gutterBottom component="h2" id="topo">
-                            {this.props.name}
-                        </Typography>
-                        <Typography  color="textSecondary" id="topo" component="p">
-                           {this.props.description}
-                        </Typography>
-                    </CardContent>
+                                <img src={`${props.href}`} height="150px" width="100%" alt="Products view" />
+                            </Typography>
+                     
+                        <CardContent>
+                            <Typography gutterBottom component="h2" id="topo">
+                                {props.name}
+                            </Typography>
+                            <Typography color="textSecondary" id="topo" component="p">
+                                {props.description}
+                            </Typography>
+                        </CardContent>
 
-                </CardActionArea>
-                {/* </Link> */}
-            
+                    </CardActionArea>
+                </Link>
+
                 <CardActions>
-                    <Link to={`/Products/${this.props.id}+${this.props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}>
-                     <Button size="small" color="primary">
-                         View Product Details
+                    <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}>
+                        <Button size="small" color="primary">
+                            View Product Details
+
                      </Button>
-                     </Link>
+                    </Link>
                 </CardActions>
 
             </Card>

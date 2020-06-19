@@ -1,9 +1,7 @@
 import React from 'react';
 import UserService from "../../Api/UserApi";
 import 'bootstrap/dist/css/bootstrap.min.css'
-//import { Link } from 'react-router-dom';
-//import { connect } from 'react-redux';
-//import { userActions } from '../../actions/UserActions';
+
 import './register.css'
 
 class register extends React.Component{
