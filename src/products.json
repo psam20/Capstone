@@ -1,6 +1,33 @@
 {
   "products": [
     {
+      "id": 1,
+      "name": "Realme 3",
+      "description": "(Dynamic Black, 3GB RAM, 32GB Storage)",
+      "manufacturer": "Sky Li",
+      "price": "15000",
+      "quantity": "800",
+      "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSq9_coI2dlwltnSCwfiuoIrTYKFQb4of1Rf-2VgAKpGr00TDd8&usqp=CAU",
+      "details": [
+        {
+          "text": "13MP+2MP dual rear camera with f1.8 + f2.4, photo editing, sensor size/pixel data: 1.12 micrometer + 1.75 micrometer, consecutive capture mode: 20 in row, bokeh mode, video: 720p, 1080p, SAR auto, sensor type: CMOS | 13MP front camera"
+        },
+        {
+          "text": "15.7988 centimeters (6.22-inch) HD+ multi-touch capacitive touchscreen with 1520 x 720 pixels resolution, 271 ppi pixel density and 16.7M color support"
+        },
+        {
+          "text": "Memory, Storage & SIM: 3GB RAM | 32GB internal memory expandable up to 256GB | Dual SIM dual-standby (4G+4G)"
+        },
+        {
+          "text": "Android Pie v9.0 operating system with 2.1GHz MediaTek Helio P70 AI octa core processor"
+        },
+        {
+          "text": "Box also includes: Adapter, micro-USB cable, important information booklet with warranty card, quick guide, SIM card tool, screen protect film and case"
+        }
+      ],
+      "count": 13
+    },
+    {
       "id": 2,
       "name": "Mi Gaming Laptop",
       "description": "With 144Hz Display, Up to 16GB RAM",
@@ -25,7 +52,7 @@
           "text": "Gamers have also provided with two 3W speakers that support Dolby surround sound technology and Hi-Res Audio standard."
         }
       ],
-      "count": 1
+      "count": 3
     },
     {
       "id": 3,
@@ -79,7 +106,7 @@
           "text": "MP3,MP4,Camera."
         }
       ],
-      "count": 2
+      "count": 4
     },
     {
       "id": 5,
@@ -157,7 +184,7 @@
           "text": "Bottom lugs for protection"
         }
       ],
-      "count": 0
+      "count": 1
     },
     {
       "id": 8,
@@ -292,8 +319,7 @@
           "text": "Storage made safer"
         }
       ],
-
-      "count": 1
+      "count": 2
     },
     {
       "id": 15,

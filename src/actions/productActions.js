@@ -29,6 +29,13 @@ export const deleteProducts=(id)=>({
     type:c.DELETE_PRODUCT,
     payload:id
 })
+export const incrementCount=(id,count)=>({
+    type:c.INCREMENT_VIEWED_PRODUCT_COUNT,
+    payload:{
+        id:id,
+        count:count
+    }
+})
 
 
 export const searchProducts= (products,value)=>(dispatch) =>{

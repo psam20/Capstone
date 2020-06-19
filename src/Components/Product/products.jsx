@@ -1,40 +1,31 @@
 import React from 'react';
 import { Card, CardActionArea, CardActions, CardContent, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import {incrementCount} from '../../actions/productActions';
+import {connect} from 'react-redux';
 import './product.scss';
-import axios from 'axios';
 
-class Product extends React.Component{
 
-    constructor(props){
-        super(props);
-        this.state={
-            count:0
-        }
-    }
-
-   proDetails=(id)=>{
-      axios.get(`http://localhost:3201/Products/${id}`)
-      .then(resp => {
-         let ctr=resp.data.count;
-         ctr=ctr+1;
-         this.setState({count:ctr})
-         console.log(ctr);
-      });
-      fetch(`http://localhost:3201/Products/${id}`, {
-           headers: { "Content-Type": "application/json; charset=utf-8" },
-           method: 'PATCH',
-           body: JSON.stringify({
-             count: this.state.count
-       })  
-    })
-   }
-
-    render(){
+const Product = (props) => {
+         
+       
+         const {increment}=props
+   const  handleCount=(e)=>{
+      console.log(props.id);
+       console.log(props.count);
+         increment(props.id,props.count);
+         fetch(`http://localhost:3201/Products/${props.id}`, {
+                       headers: { "Content-Type": "application/json; charset=utf-8" },
+                       method: 'PATCH',
+                       body: JSON.stringify({
+                         count: props.count+1
+                   })  
+                })
+     }
     return (
         <div className="productDiv">
             <Card>
-            <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}>
+            <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`} onClick={()=>handleCount()}>
                     <CardActionArea>
                        
                             <Typography>
@@ -55,17 +46,19 @@ class Product extends React.Component{
                 </Link>
 
                 <CardActions>
-                    <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}>
+                    <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`} onClick={(e)=>handleCount(e)}>
                         <Button size="small" color="primary">
                             View Product Details
-
                      </Button>
                     </Link>
                 </CardActions>
 
             </Card>
         </div>
-    )}
+    )
 }
 
-export default Product;
+const MapDisPatchToProps =(dispatch)=>({
+    increment:(a,b)=>dispatch(incrementCount(a,b))
+})
+export default connect(null, MapDisPatchToProps) (Product);
