@@ -2,52 +2,61 @@ import React from 'react';
 import { Card, CardActionArea, CardActions, CardContent, Typography, Button } from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import './product.scss';
-import ProductApi from '../../Api/ProductApi';
+import axios from 'axios';
 
-// let count=0;
+class Product extends React.Component{
 
-// function getDetails(id){
-//     ProductApi.get(id).then(
-//         res=>res.data
-//     )
-// }
+    constructor(props){
+        super(props);
+        this.state={
+            count:0
+        }
+    }
 
-// function proDetails(props){
-//     let id = props.match.params.id;
-//     getDetails(id);
-//     count=count+1;
-//     console.log(count)
-//     console.log(id)
-// }
+   proDetails=(id)=>{
+      axios.get(`http://localhost:3201/Products/${id}`)
+      .then(resp => {
+         let ctr=resp.data.count;
+         ctr=ctr+1;
+         this.setState({count:ctr})
+         console.log(ctr);
+      });
+      fetch(`http://localhost:3201/Products/${id}`, {
+           headers: { "Content-Type": "application/json; charset=utf-8" },
+           method: 'PATCH',
+           body: JSON.stringify({
+             count: this.state.count
+       })  
+    })
+   }
 
-const Product = (props) => {
-
+    render(){
     return (
         <div className="productDiv">
             <Card>
-      <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}>
+      {/* <Link to={`/Products/${this.props.id}+${this.props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}> */}
                 <CardActionArea width="5rem">
                     
                      {/* <Typography> */}
                      {/* <Link to={`/${props.name}`}> */}
-                         <img  src={`${props.href}`} height="150px" width="250px" alt="Products view"/>
+                         <img  src={`${this.props.href}`} height="150px" width="250px" alt="Products view"/>
 
                          {/* </Link> */}
                      {/* </Typography> */}
                     <CardContent>
                         <Typography gutterBottom component="h2" id="topo">
-                            {props.name}
+                            {this.props.name}
                         </Typography>
                         <Typography  color="textSecondary" id="topo" component="p">
-                           {props.description}
+                           {this.props.description}
                         </Typography>
                     </CardContent>
 
                 </CardActionArea>
-                </Link>
+                {/* </Link> */}
             
                 <CardActions>
-                    <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}>
+                    <Link to={`/Products/${this.props.id}+${this.props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`}>
                      <Button size="small" color="primary">
                          View Product Details
                      </Button>
@@ -56,7 +65,7 @@ const Product = (props) => {
 
             </Card>
         </div>
-    )
+    )}
 }
 
 export default Product;

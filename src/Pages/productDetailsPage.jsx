@@ -1,58 +1,47 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom'
 import { Grid, Card, Typography, Button } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
-import ProductService from "../Api/ProductApi";
+import axios from 'axios';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { connect } from 'react-redux';
 import './productDetailsPage.scss';
 
-let count=0;
-let ctr;
-
-function proDetails(id){
-    getDetails(id);
-    count=count+1;
-    console.log(count)
-    console.log(id)
-}
-
-function getDetails(id){
-    fetch(`http://localhost:3201/products/${id}`)
-        .then(res=>res.json())
-        .then(data=>{
-            data.count=data.count+1
-            console.log(data.count)}
-        )
-        return fetch(`http://localhost:3201/products/${id}`, {
-                method: 'PUT',
-                mode: 'CORS',
-                //body: this.state.empProjects,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(res => {
-                return res;
-            }).catch(err => err);
-}
-
 const ProductDetailsPage = ({ filtered }) => {
     const { id } = useParams();
     console.log(filtered);
+    const [count, setCount] = useState(0);
+    const [flag, setFlag] = useState(0);
     const i = id.split("+");
     console.log(i[0]);
-    proDetails(i[0]);
     const selectedProduct = filtered.find(p => p.id.toString() === i[0].toString());
     console.log(selectedProduct);
 
     console.log(selectedProduct.details)
 
+    useEffect(()=>{
+        axios.get(`http://localhost:3201/Products/${i[0]}`)
+          .then(resp => {
+             setCount(resp.data.count+1)
+             setFlag(1);
+             console.log(count);
+             console.log(resp.data);
+            })
+            if(flag===1){
+             fetch(`http://localhost:3201/Products/${i[0]}`, {
+                 headers: { "Content-Type": "application/json; charset=utf-8" },
+                 method: 'PATCH',
+                 body: JSON.stringify({
+                   count: count
+             })
+         })
+        }
+    })
+
     return (
         <div className="productDetails">
-
-
             <Grid container spacing={4} justify="space-between">
                 <Grid item xs={12} lg={4} sm={6} md={6} >
                     <Card className="card">

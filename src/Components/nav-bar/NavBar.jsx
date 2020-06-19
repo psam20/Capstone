@@ -2,6 +2,7 @@ import React from 'react';
 
 import {Menu,AddShoppingCart} from '@material-ui/icons';
 import {Link} from 'react-router-dom';
+import {NavDropdown} from 'react-bootstrap';
 import './navbar.scss';
 const Header = ()=>{
  
@@ -37,7 +38,13 @@ const Header = ()=>{
             <Link to="/AddProduct">
                 <li>Add Products</li>
             </Link>
-            <Link to="/register">
+            <NavDropdown title="Profile" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/login"> Login</NavDropdown.Item>
+              <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/">Logout</NavDropdown.Item>
+            </NavDropdown>
+            {/* <Link to="/register">
               <li>Register</li>
             </Link>
             <Link to="/login">
@@ -45,7 +52,7 @@ const Header = ()=>{
             </Link>
             <Link to="/sign-in">
                 <li>Log Out</li>
-            </Link>
+            </Link> */}
           </ul>
         </nav>
         <nav className="nav1">

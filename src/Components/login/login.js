@@ -1,9 +1,9 @@
 import React from 'react';
-import { UserService } from "../../Api/UserApi";
+import UserService from "../../Api/UserApi";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './login.css';
-import { connect } from 'react-redux';
-import { userActions } from '../../actions/UserActions'
+//import { connect } from 'react-redux';
+//import { userActions } from '../../actions/UserActions'
 
 class login extends React.Component{
 
@@ -20,7 +20,7 @@ class login extends React.Component{
       }
 
     componentDidMount() {
-        UserService.getUser()
+        UserService.getAllUser()
             .then(response => {
                 this.setState({
                     User: response.data
@@ -74,10 +74,10 @@ class login extends React.Component{
                                 value={this.state.password}
                                 name = "password"
                                 onChange={this.Password}/>
-                                {this.state.submitted && !this.state.password &&
+                                {submitted && !password &&
                                     <div className="help-block">Password is required</div>
                                 }
-                                {this.state.submitted && !this.state.password.length<6 &&
+                                {submitted && !password.length<6 &&
                                     <div className="help-block">Password should be 6 characters long</div>
                                 }
 
@@ -95,17 +95,17 @@ class login extends React.Component{
     }
 }
 
-function mapState(state) {
-    const { loggingIn } = state.authentication;
-    return { loggingIn };
-}
+// function mapState(state) {
+//     const { loggingIn } = state.authentication;
+//     return { loggingIn };
+// }
 
-const actionCreators = {
-    login: userActions.login,
-    logout: userActions.logout
-};
+// const actionCreators = {
+//     login: userActions.login,
+//     logout: userActions.logout
+// };
 
-const connectedLoginPage = connect(mapState, actionCreators)(login);
-export { connectedLoginPage as login };
+// const connectedLoginPage = connect(mapState, actionCreators)(login);
+// export { connectedLoginPage as login };
 
-//export default login;
+export default login;
