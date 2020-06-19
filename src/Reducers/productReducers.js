@@ -6,6 +6,7 @@ export const initialState={
     hasErrors:false,
     searchInput:"",
     filteredProducts:[],
+    count:0,
 }
 
 export default function productsReducer(state=initialState,action) {
@@ -34,7 +35,16 @@ export default function productsReducer(state=initialState,action) {
                      }
                      return p
                  })]
-             }   
+             } 
+          case constants.INCREMENT_VIEWED_PRODUCT_COUNT:
+              
+              return {
+                  ...state,
+                  count:action.payload.count+1,
+                
+                  
+             
+              }     
         default:
             return state
     }

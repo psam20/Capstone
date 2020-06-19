@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { useParams, useHistory, Link} from 'react-router-dom'
+import React from 'react';
+import { useParams, useHistory, Link } from 'react-router-dom'
 import { Grid, Card, Typography, Button, Dialog, DialogActions, Slide, DialogTitle, DialogContent, DialogContentText } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -8,18 +8,19 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { connect } from 'react-redux';
 
 import { deleteProductsAxios } from '../actions/productActions';
+
 import './productDetailsPage.scss';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
+const ProductDetailsPage = ({ filtered, deleteProducts, auth }) => {
 
     const [open, setOpen] = React.useState(false);
-            const [count, setCount] = useState(0);
-    const [flag, setFlag] = useState(0);
-   
+    // const [count, setCount] = useState(0);
+    // const [flag, setFlag] = useState(0);
+
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -35,31 +36,14 @@ const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
     // console.log(selectedProduct);
 
     // console.log(selectedProduct.details)
-          
-     useEffect(()=>{
-        axios.get(`http://localhost:3201/Products/${i[0]}`)
-          .then(resp => {
-             setCount(resp.data.count+1)
-             setFlag(1);
-             console.log(count);
-             console.log(resp.data);
-            })
-            if(flag===1){
-             fetch(`http://localhost:3201/Products/${i[0]}`, {
-                 headers: { "Content-Type": "application/json; charset=utf-8" },
-                 method: 'PATCH',
-                 body: JSON.stringify({
-                   count: count
-             })
-         })
-        }
-    })
+
+   
 
     const deletePro = (e, id) => {
         e.preventDefault();
-      handleClickOpen();
-      deleteProducts(id);
-      history.push('/');
+        handleClickOpen();
+        deleteProducts(id);
+        history.push('/');
     }
 
 
@@ -82,28 +66,29 @@ const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
                     <br />
                     <div className="buttons">
                         <Link to={`/EditProduct/${selectedProduct.id}`}>
-                            {(auth===true)?
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            startIcon={<EditIcon />}
-                        >
-                            Edit Product
+                            {(auth === true) ? (
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    startIcon={<EditIcon />}
+                                >
+                                    Edit Product
 
-      </Button>
-                    
-      </Link>
-                       {(auth===true)?<Button
+                                </Button>) : ""
+                            }
+
+                        </Link>
+                        {(auth === true) ? <Button
                             variant="contained"
                             color="secondary"
-                            onClick={e => 
+                            onClick={e =>
                                 deletePro(e, selectedProduct.id)
 
                             }
                             startIcon={<DeleteIcon />}
                         >
                             Delete
-      </Button>:""}
+      </Button> : ""}
                         <Dialog
                             open={open}
                             TransitionComponent={Transition}
@@ -137,20 +122,20 @@ const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
 
                         <ul>
 
-                              {
-                                  selectedProduct.details.map((d,id)=>(
-                                      <li key={id}>
-                                          {d.text}
+                            {
+                                selectedProduct.details.map((d, id) => (
+                                    <li key={id}>
+                                        {d.text}
 
-                                      </li>
-                                  ))
-                              }
-                              <li>
-                                  <p><b><u>Manufactured By :-{selectedProduct.manufacturer} </u></b></p>
-                              </li>
-                              </ul>
+                                    </li>
+                                ))
+                            }
+                            <li>
+                                <p><b><u>Manufactured By :-{selectedProduct.manufacturer} </u></b></p>
+                            </li>
+                        </ul>
 
-                            <h4>Price : Rs.{selectedProduct.price}</h4>
+                        <h4>Price : Rs.{selectedProduct.price}</h4>
 
 
                     </div>
@@ -183,7 +168,7 @@ const ProductDetailsPage = ({ filtered, deleteProducts ,auth }) => {
 const MapStateToProps = (state => ({
     products: state.products.products,
     filtered: state.products.filteredProducts,
-    auth:state.user.authBool,
+    auth: state.user.authBool,
 }))
 
 const MapDispatchToProps = (dispatch) => {
