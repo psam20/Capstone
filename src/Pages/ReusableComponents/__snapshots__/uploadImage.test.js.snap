@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Upload Image Component Test Case Upload Image Component should Rendered 1`] = `ShallowWrapper {}`;

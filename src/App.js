@@ -7,12 +7,12 @@ import AddProductPage from './Pages/Add Product/addProductPage';
 import EditProduct from './Pages/Edit_Product/editProductPage';
 import Login from './Components/login/login'
 import register from './Components/register/register'
-import ProductDetailsPage from './Pages/productDetailsPage';
+// import ProductDetailsPage from './Pages/productDetailsPage';
 import './App.css';
 
 const About = lazy(() => import('./Components/AboutComponent/About'));
 const PieChart = lazy(() => import('./Components/Piechart/Piechart'));
-// const ProductDetailsPage = lazy(() => import('./Pages/productDetailsPage'));
+const ProductDetailsPage = lazy(() => import('./Pages/productDetailsPage'));
 
 
 function App({auth}) {
@@ -25,7 +25,7 @@ function App({auth}) {
        
        <Route path="/" exact component={HomePage}/>
 
-       <Route path="/Products/:id" exact component={ProductDetailsPage} />
+     
    
        <Route path="/AddProduct" exact component={AddProductPage}/>
        <Route path="/EditProduct/:id" exact component={EditProduct} />
