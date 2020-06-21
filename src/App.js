@@ -34,7 +34,7 @@ function App({auth}) {
        <Route path="/register" exact component={register}/>
        <Suspense fallback={<div>Loading...</div>}>
           <Route path="/About" exact component={About}/>
-          <Route path="/Products/:id" exact component={ProductDetailsPage} />
+          {/* <Route path="/Products/:id" exact component={ProductDetailsPage} /> */}
           <Route path="/chart" exact component={PieChart}/>
        </Suspense>
       

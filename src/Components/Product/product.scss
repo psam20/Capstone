@@ -11,6 +11,19 @@
     
 }
 
+.deletebtn{
+    margin-top: 1%;
+    margin-left: 12%;
+    outline: none;
+  }
+  
+#delbtn{
+    border: 1px solid red;
+    border-radius: 10px;
+    color: white;
+    background-color: red;
+}  
+
 img:hover{
     background-color: lightskyblue;
 }

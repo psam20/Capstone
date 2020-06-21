@@ -19,16 +19,19 @@ export const addProducts=(pro)=>({
     type:c.ADD_PRODUCT,
     payload:pro
 })
+
 export const EditProducts=(pro)=>{
     console.log(pro);
     return({
     type:c.EDIT_PRODUCT,
     payload:pro
 })}
+
 export const deleteProducts=(id)=>({
     type:c.DELETE_PRODUCT,
     payload:id
 })
+
 export const incrementCount=(id,count)=>({
     type:c.INCREMENT_VIEWED_PRODUCT_COUNT,
     payload:{
@@ -36,7 +39,6 @@ export const incrementCount=(id,count)=>({
         count:count
     }
 })
-
 
 export const searchProducts= (products,value)=>(dispatch) =>{
     const val=value.searchInput;
@@ -108,5 +110,22 @@ export  function addProductsAxios(pro){
         console.log(err);
     }
   }
+
+
+}
+
+export function deleteSelectProductsAxios(id) { 
+    return  async dispatch=>{
+  try{
+ for(let i=0;i<id.length;i++){
+   await Axios.delete(`http://localhost:3201/products/${id[i]}`)
+           dispatch(deleteProducts(id[i]))
+  }
+}
+  catch(err){
+      console.log(err);
+  }
+}
+
 
 }

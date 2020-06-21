@@ -103,10 +103,6 @@ class Login extends React.Component{
                                 {submitted && !password &&
                                     <div className="help-block">Password is required</div>
                                 }
-                                {submitted && !password.length<6 &&
-                                    <div className="help-block">Password should be 6 characters long</div>
-                                }
-
                             </div>
                             <div className="form-group">
                                 <button className="btn btn-success" onClick={this.login}>

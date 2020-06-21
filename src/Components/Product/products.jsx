@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Card, CardActionArea, CardActions, CardContent, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import {incrementCount} from '../../actions/productActions';
@@ -7,10 +7,11 @@ import './product.scss';
 
 
 const Product = (props) => {
-         
-       
-         const {increment}=props
-   const  handleCount=(e)=>{
+     const [isActive, setActive] = useState(false);
+     const [array, setArray]=useState([]);
+     const [i, setI]=useState(0);
+    const {increment}=props
+    const  handleCount=(e)=>{
       console.log(props.id);
        console.log(props.count);
          increment(props.id,props.count);
@@ -22,14 +23,26 @@ const Product = (props) => {
                    })  
                 })
      }
+
+    const handleChange = (e) => {
+        const arr= array;
+            const target = e.target;
+               if(target.checked){
+                   arr[i] = +e.target.id;  
+                   setI(i+1);
+               } 
+        
+        setArray(arr);
+        console.log(array)
+        setActive(true);
+    }
+
     return (
         <div className="productDiv">
             <Card>
             <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`} onClick={()=>handleCount()}>
                     <CardActionArea>
-                       
                             <Typography>
-
                                 <img src={`${props.href}`} height="150px" width="100%" alt="Products view" />
                             </Typography>
                      
@@ -51,6 +64,7 @@ const Product = (props) => {
                             View Product Details
                      </Button>
                     </Link>
+                    <input type="checkbox" id={props.id} checked={props.value} onChange={handleChange}/><b>  Select to delete</b>
                 </CardActions>
 
             </Card>
@@ -60,5 +74,6 @@ const Product = (props) => {
 
 const MapDisPatchToProps =(dispatch)=>({
     increment:(a,b)=>dispatch(incrementCount(a,b))
+    //selectProduct:(value)=>dispatch()
 })
 export default connect(null, MapDisPatchToProps) (Product);

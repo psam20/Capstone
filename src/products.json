@@ -25,7 +25,7 @@
           "text": "Box also includes: Adapter, micro-USB cable, important information booklet with warranty card, quick guide, SIM card tool, screen protect film and case"
         }
       ],
-      "count": 13
+      "count": 18
     },
     {
       "id": 2,
@@ -292,7 +292,8 @@
           "text": "Super bass, HD clarity, 40mm drivers, Battery type: Rechargeable 250mAh Li-polymer battery"
         }
       ],
-      "count": 0
+      "count": 0,
+      "value": false
     },
     {
       "id": 12,
@@ -319,7 +320,8 @@
           "text": "Storage made safer"
         }
       ],
-      "count": 2
+      "count": 2,
+      "value": false
     },
     {
       "id": 15,
@@ -336,7 +338,8 @@
         {
           "text": "please throw this phone as hard as you can SO THAT IT goes back to china and explode"
         }
-      ]
+      ],
+      "value": false
     },
     {
       "id": 16,
@@ -353,7 +356,8 @@
         {
           "text": "This Phone includes Cheapness that is availabe all over communist chinese."
         }
-      ]
+      ],
+      "value": false
     },
     {
       "id": 17,
@@ -370,7 +374,26 @@
         {
           "text": "Low features at Expensive price."
         }
-      ]
+      ],
+      "value": false
+    },
+    {
+      "id": 21,
+      "name": "jdfhg",
+      "description": "hfhf",
+      "manufacturer": "ghfgh",
+      "price": 68,
+      "quantity": 8676,
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Ffacewash.jpg?alt=media&token=ffb47e1a-043a-4ce2-b651-ac3a12f59252",
+      "details": [
+        {
+          "text": "hj"
+        },
+        {
+          "text": ""
+        }
+      ],
+      "value": false
     }
   ]
 }
