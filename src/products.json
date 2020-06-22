@@ -25,7 +25,7 @@
           "text": "Box also includes: Adapter, micro-USB cable, important information booklet with warranty card, quick guide, SIM card tool, screen protect film and case"
         }
       ],
-      "count": 13
+      "count": 22
     },
     {
       "id": 2,
@@ -52,7 +52,7 @@
           "text": "Gamers have also provided with two 3W speakers that support Dolby surround sound technology and Hi-Res Audio standard."
         }
       ],
-      "count": 3
+      "count": 36
     },
     {
       "id": 3,
@@ -79,7 +79,7 @@
           "text": "The two buttons at the bottom of the shoe light up in the color of your choice while programming them, a feature that Tatum finds particularly interesting."
         }
       ],
-      "count": 4
+      "count": 9
     },
     {
       "id": 4,
@@ -160,7 +160,7 @@
           "text": "Note : Product is HOT AIR dryer , 2 Flexible Heat Setting for careful drying."
         }
       ],
-      "count": 1
+      "count": 2
     },
     {
       "id": 7,
@@ -211,7 +211,7 @@
           "text": "Occasion:-Daily Wear,Party Wear,Valentine Gifts for Girlfriend Wife Lovers Birthday Anniversary Wedding Gifts For Some One You Love"
         }
       ],
-      "count": 0
+      "count": 1
     },
     {
       "id": 9,
@@ -238,7 +238,7 @@
           "text": "With natural white floral fragrance, help you clean face in a pleasant mood"
         }
       ],
-      "count": 0
+      "count": 2
     },
     {
       "id": 10,
@@ -265,7 +265,7 @@
           "text": "Size: 130*137*50mm"
         }
       ],
-      "count": 0
+      "count": 9
     },
     {
       "id": 11,
@@ -292,7 +292,7 @@
           "text": "Super bass, HD clarity, 40mm drivers, Battery type: Rechargeable 250mAh Li-polymer battery"
         }
       ],
-      "count": 0
+      "count": 3
     },
     {
       "id": 12,
@@ -322,55 +322,34 @@
       "count": 2
     },
     {
-      "id": 15,
-      "name": "Red MI Note 3 Pro",
-      "description": "Worst cheap product",
-      "manufacturer": "Xiaomi",
-      "price": 12000,
-      "quantity": 1,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload.jpeg?alt=media&token=b1a27730-37de-4c57-aa9e-fe933efa34ba",
-      "details": [
-        {
-          "text": "Chinese Product,Don't Buy."
-        },
-        {
-          "text": "please throw this phone as hard as you can SO THAT IT goes back to china and explode"
-        }
-      ]
-    },
-    {
-      "id": 16,
-      "name": "Red Mi Note 7 Pro",
+      "id": 13,
+      "name": "redmi note 3",
       "description": "Another Chinese PHone Made in India",
       "manufacturer": "Xiaomi",
-      "price": 13000,
-      "quantity": 1,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fxiaomi-redmi-note-7-pro-1.jpg?alt=media&token=c3caa350-f81b-4edf-96d1-c1c2e668813e",
+      "price": 12300,
+      "quantity": 12,
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload.jpeg?alt=media&token=4b75cc98-3255-43ac-b054-5c6205be51ee",
       "details": [
         {
-          "text": "Throw this Phone Back to china , 100% china will die of shame."
+          "text": "fggfghghghgh"
         },
         {
-          "text": "This Phone includes Cheapness that is availabe all over communist chinese."
-        }
-      ]
-    },
-    {
-      "id": 17,
-      "name": "Iphone 11 Pro",
-      "description": "Most Expensive Phone ,You Don't Have to sell Your Kidney.Just apply for loan",
-      "manufacturer": "Apple",
-      "price": 100000,
-      "quantity": 1,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload%20iphone.jpeg?alt=media&token=59dc1655-4b5a-4895-8c5c-1d7f280c72a6",
-      "details": [
-        {
-          "text": "Name and Brand is Enough."
+          "text": "hgghghghghghghgh"
         },
         {
-          "text": "Low features at Expensive price."
+          "text": "fggfghghghghgfgfghggh"
+        },
+        {
+          "text": "ggcggffggfgfgfghgfgfgfgfgfgfhgh"
+        },
+        {
+          "text": "hffhgfggfhffhfgfhfghggfgfggfgggffgghggffggfhg"
+        },
+        {
+          "text": "gcghghghfggggfggghgbvvbbvbvbnvnbbvbvbvnbvvb"
         }
-      ]
+      ],
+      "count": 2
     }
   ]
 }

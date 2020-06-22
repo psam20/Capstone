@@ -7,6 +7,8 @@ export const initialState={
     searchInput:"",
     filteredProducts:[],
     count:0,
+    deleteBool:false,
+    selected:[],
 }
 
 export default function productsReducer(state=initialState,action) {
@@ -41,10 +43,9 @@ export default function productsReducer(state=initialState,action) {
               return {
                   ...state,
                   count:action.payload.count+1,
-                
+                 }
+              
                   
-             
-              }     
         default:
             return state
     }

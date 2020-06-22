@@ -55,6 +55,7 @@ const AddProductPage = ({ addProducts }) => {
             quantity: '',
             href: '',
             details: [],
+            count:0,
         },
         validate,
         onSubmit: async values => {
