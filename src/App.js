@@ -25,7 +25,9 @@ function App({auth}) {
        
        <Route path="/" exact component={HomePage}/>
 
-       {/* <Route path="/Products/:id" exact component={ProductDetailsPage} /> */}
+
+     
+
    
        <Route path="/AddProduct" exact component={AddProductPage}/>
        <Route path="/EditProduct/:id" exact component={EditProduct} />

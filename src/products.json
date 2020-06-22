@@ -25,7 +25,9 @@
           "text": "Box also includes: Adapter, micro-USB cable, important information booklet with warranty card, quick guide, SIM card tool, screen protect film and case"
         }
       ],
+
       "count": 22
+
     },
     {
       "id": 2,
@@ -53,6 +55,7 @@
         }
       ],
       "count": 36
+
     },
     {
       "id": 3,
@@ -79,7 +82,9 @@
           "text": "The two buttons at the bottom of the shoe light up in the color of your choice while programming them, a feature that Tatum finds particularly interesting."
         }
       ],
+
       "count": 9
+
     },
     {
       "id": 4,
@@ -292,7 +297,9 @@
           "text": "Super bass, HD clarity, 40mm drivers, Battery type: Rechargeable 250mAh Li-polymer battery"
         }
       ],
+
       "count": 3
+
     },
     {
       "id": 12,
@@ -321,35 +328,6 @@
       ],
       "count": 2
     },
-    {
-      "id": 13,
-      "name": "redmi note 3",
-      "description": "Another Chinese PHone Made in India",
-      "manufacturer": "Xiaomi",
-      "price": 12300,
-      "quantity": 12,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload.jpeg?alt=media&token=4b75cc98-3255-43ac-b054-5c6205be51ee",
-      "details": [
-        {
-          "text": "fggfghghghgh"
-        },
-        {
-          "text": "hgghghghghghghgh"
-        },
-        {
-          "text": "fggfghghghghgfgfghggh"
-        },
-        {
-          "text": "ggcggffggfgfgfghgfgfgfgfgfgfhgh"
-        },
-        {
-          "text": "hffhgfggfhffhfgfhfghggfgfggfgggffgghggffggfhg"
-        },
-        {
-          "text": "gcghghghfggggfggghgbvvbbvbvbnvnbbvbvbvnbvvb"
-        }
-      ],
-      "count": 2
-    }
+  
   ]
 }
