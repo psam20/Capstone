@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import AddProductPage from './Pages/Add Product/addProductPage';
 import EditProduct from './Pages/Edit_Product/editProductPage';
 import Login from './Components/login/login'
+import Profile from './Components/Profile/Profile'
 import register from './Components/register/register'
 // import ProductDetailsPage from './Pages/productDetailsPage';
 import './App.css';
@@ -31,12 +32,13 @@ function App({auth}) {
    
        <Route path="/AddProduct" exact component={AddProductPage}/>
        <Route path="/EditProduct/:id" exact component={EditProduct} />
+       <Route path="/Profile" exact component={Profile} />
        <Route path="/login" exact render={()=>auth?(<Redirect to="/"/>):(<Login/>)}/>
 
        <Route path="/register" exact component={register}/>
        <Suspense fallback={<div>Loading...</div>}>
           <Route path="/About" exact component={About}/>
-          <Route path="/Products/:id" exact component={ProductDetailsPage} />
+          {/* <Route path="/Products/:id" exact component={ProductDetailsPage} /> */}
           <Route path="/chart" exact component={PieChart}/>
        </Suspense>
       

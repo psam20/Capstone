@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Card, CardActionArea, CardActions, CardContent, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import {incrementCount,selectProducts} from '../../actions/productActions';
@@ -8,6 +8,7 @@ import './product.scss';
 
 
 const Product = (props) => {
+
          
        
          const {increment,select,auth}=props;
@@ -27,14 +28,26 @@ const Product = (props) => {
                    })  
                 })
      }
+
+    const handleChange = (e) => {
+        const arr= array;
+            const target = e.target;
+               if(target.checked){
+                   arr[i] = +e.target.id;  
+                   setI(i+1);
+               } 
+        
+        setArray(arr);
+        console.log(array)
+        setActive(true);
+    }
+
     return (
         <div className="productDiv">
             <Card>
             <Link to={`/Products/${props.id}+${props.name.replace(/[&\\/\\/#,+()$~%.'":*?<>{}]/g,'_')}`} onClick={()=>handleCount()}>
                     <CardActionArea>
-                       
                             <Typography>
-
                                 <img src={`${props.href}`} height="150px" width="100%" alt="Products view" />
                             </Typography>
                      
@@ -56,6 +69,7 @@ const Product = (props) => {
                             View Product Details
                      </Button>
                     </Link>
+
                     {auth?
                     <span>
           <input
@@ -65,6 +79,7 @@ const Product = (props) => {
           />
           <label >Select</label>
         </span>:""}
+
                 </CardActions>
 
             </Card>
@@ -77,6 +92,7 @@ const MapStateToProps=(state)=>({
     
 })
 const MapDisPatchToProps =(dispatch)=>({
+
     increment:(a,b)=>dispatch(incrementCount(a,b)),
     select:(value)=>dispatch(selectProducts(value))
 })

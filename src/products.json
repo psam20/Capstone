@@ -54,6 +54,7 @@
           "text": "Gamers have also provided with two 3W speakers that support Dolby surround sound technology and Hi-Res Audio standard."
         }
       ],
+
       "count": 36
 
     },
@@ -298,7 +299,9 @@
         }
       ],
 
+
       "count": 3
+
 
     },
     {
@@ -326,8 +329,9 @@
           "text": "Storage made safer"
         }
       ],
-      "count": 2
+      "count": 2,
+      "value": false
     },
-  
+
   ]
 }

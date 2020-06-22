@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user reducer should handle LOG0UT_USER 1`] = `
+Object {
+  "authBool": false,
+  "currentUser": null,
+}
+`;
+
+exports[`user reducer should handle SET_CURRENT_USER 1`] = `
+Object {
+  "authBool": true,
+  "currentUser": undefined,
+}
+`;

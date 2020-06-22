@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`product reducer should handle DELETE_PRODUCT 1`] = `
+Object {
+  "count": 0,
+  "filteredProducts": Array [],
+  "hasErrors": false,
+  "loading": false,
+  "products": Array [
+    Array [],
+  ],
+  "searchInput": "",
+}
+`;
+
+exports[`product reducer should handle EDIT_PRODUCT 1`] = `
+Object {
+  "count": 0,
+  "filteredProducts": Array [],
+  "hasErrors": false,
+  "loading": false,
+  "products": Array [
+    Array [],
+  ],
+  "searchInput": "",
+}
+`;

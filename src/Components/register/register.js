@@ -4,6 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './register.css'
 
+const validEmailRegex = RegExp(
+  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+);
+const validMobileRegex = RegExp(
+  /^(([1-9]*)|(([1-9]*).([0-9]*)))$/i
+);
+
 class register extends React.Component{
 
     constructor(props) {
@@ -17,7 +24,11 @@ class register extends React.Component{
             password: "",
             location: "",
             mobile: null,
-            submitted: false
+            submitted: false,
+            errors: {
+              email: '',
+              mobile: ''
+            }
         };
       }
 
@@ -37,6 +48,12 @@ class register extends React.Component{
         this.setState({
           email: e.target.value
         });
+        const { value } = e.target;
+            let errors = this.state.errors;
+                errors.email = 
+                  validEmailRegex.test(value)
+                    ? ''
+                    : 'Email is not valid!';
     }
 
       onChangePassword=(e)=> {
@@ -55,6 +72,12 @@ class register extends React.Component{
         this.setState({
           mobile: e.target.value
         });
+        const { value } = e.target;
+            let errors = this.state.errors;
+                errors.mobile = 
+                  validMobileRegex.test(value)
+                    ? ''
+                    : 'Mobile number should contain 10 digits!';
       }
 
       handleSubmit=()=> {
@@ -65,7 +88,7 @@ class register extends React.Component{
           lastName: this.state.lastName,
           password: this.state.password,
           location: this.state.location,
-          mobile: this.state.mobiles,
+          mobile: this.state.mobile,
           value: false
         };
     
@@ -93,6 +116,7 @@ class register extends React.Component{
     
 
     render(){
+        const { errors, firstName, lastName, location, mobile, email, password, submitted } = this.state;
         return(
           <div className="container">
              <div className="row">
@@ -105,6 +129,13 @@ class register extends React.Component{
                              name ="firstName"
                              required
                              onChange={this.onChangeFirstName}/>
+                             {submitted && !firstName &&
+                                <div className="help-block">First Name is required</div>
+                             }
+                             {submitted && firstName.length<3 &&
+                                <div className="help-block">First Name should be 3 charcters long</div>
+                             }
+                                                            
                          </div>
                          <div className="form-group">
                              <input type="text" className="form-control" 
@@ -113,14 +144,27 @@ class register extends React.Component{
                              name ="lastName"
                              required
                              onChange={this.onChangeLastName}/>
+                             {submitted && !lastName &&
+                                <div className="help-block">Last Name is required</div>
+                             }
+                             {submitted && lastName.length<3 &&
+                                <div className="help-block">Last Name should be 3 charcters long</div>
+                             }
                          </div>
                          <div className="form-group">
                              <input type="email" className="form-control"
                               placeholder="Email" 
                               id ="email"
                               name ="email"
+                              pattern=".+@globex.com" size="30"
                               required
                               onChange={this.onChangeEmail}/>
+                              {submitted && !email &&
+                                <div className="help-block">Email is required</div>
+                              }
+                              {errors.email.length > 0 && 
+                                  <div className='help-block'>{errors.email}</div>
+                              }
                          </div>
                          <div className="form-group">
                              <input type="password" className="form-control" 
@@ -129,6 +173,12 @@ class register extends React.Component{
                              name ="password"
                              required
                              onChange={this.onChangePassword}/>
+                             {submitted && !password &&
+                                <div className="help-block">Password is required</div>
+                             }
+                             {submitted && password.length<6 &&
+                                <div className="help-block">Password should be 6 characters long</div>
+                             }
                          </div>
                          <div className="form-group">
                              <input type="text" className="form-control"
@@ -137,6 +187,9 @@ class register extends React.Component{
                               name ="location"
                               required
                              onChange={this.onChangeLocation}/>
+                             {submitted && !location &&
+                                <div className="help-block">Location is required</div>
+                             }
                          </div>
                          <div className="form-group">
                              <input type="text" className="form-control" 
@@ -145,6 +198,12 @@ class register extends React.Component{
                              name ="mobile"
                              required
                              onChange={this.onChangeMobile} />
+                             {submitted && !mobile &&
+                                <div className="help-block">Mobile is required</div>
+                             }
+                             {errors.mobile.length > 0 && 
+                                <div className='help-block'>{errors.mobile}</div>
+                             }
                          </div>     
                          <div className="form-group">
                              <button className="btn btn-primary signin"

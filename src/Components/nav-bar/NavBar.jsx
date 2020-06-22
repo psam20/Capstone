@@ -54,6 +54,12 @@ const Header = ({loginUsers,auth,logOut})=>{
                 <li>Add Products</li>:""
               }
             </Link>
+            <Link to="/Profile">
+              {
+                (auth===true)?
+                <li>My Profile</li>:""
+              }
+            </Link>
            
             <Link to="/login"className="link" onClick={(e)=>handleLogout(e)}>
               {/* <li>Login</li> */}

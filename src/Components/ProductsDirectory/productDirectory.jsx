@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { connect } from 'react-redux';
 
 import { fetchProducts,deleteProductsAxios } from '../../actions/productActions';
@@ -6,6 +7,7 @@ import { useEffect } from 'react';
 import Product from '../Product/products';
 import Button from '@material-ui/core/Button';
 import './product-d.scss';
+
 const ProductDirectory = ({fetchProducts,auth,filteredProducts,selectIds,deleteMultiple}) => {
     useEffect(() => {
         fetchProducts()
@@ -55,4 +57,6 @@ const MapDispatchToProps=(dispatch)=>{
 }
 }
 
+
 export default connect(MapStateToProps,MapDispatchToProps)(ProductDirectory);
+

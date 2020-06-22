@@ -6,8 +6,7 @@ const HomePage = ()=> {
     return (
         <div className="homepage">
           <Search />
-          <ProductDirectory />
-             
+          <ProductDirectory /> 
         </div>
     )
 }

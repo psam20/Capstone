@@ -64,7 +64,7 @@ const EditProduct = ({ products,updateProduct }) => {
                   
                  history.push('/');
                
-            }, 3000)
+            }, 5000)
 
             setBool(false);
         }
