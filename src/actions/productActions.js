@@ -39,6 +39,16 @@ export const incrementCount=(id,count)=>({
         count:count
     }
 })
+export const selectProducts=(id)=>({   
+     type:c.SELECT_PRODUCT,
+    payload:id,
+})
+
+
+export const deleteSelected=()=>({
+    type:c.SELECTED_PRODUCT_DELETE,
+})
+
 
 export const searchProducts= (products,value)=>(dispatch) =>{
     const val=value.searchInput;

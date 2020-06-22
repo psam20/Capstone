@@ -26,7 +26,9 @@ function App({auth}) {
        
        <Route path="/" exact component={HomePage}/>
 
+
      
+
    
        <Route path="/AddProduct" exact component={AddProductPage}/>
        <Route path="/EditProduct/:id" exact component={EditProduct} />

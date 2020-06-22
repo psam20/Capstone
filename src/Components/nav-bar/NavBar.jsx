@@ -38,17 +38,17 @@ const Header = ({loginUsers,auth,logOut})=>{
           <Menu id="Menu"  onClick={handleToggle}fontSize="large" />
         
           <ul className={`collapsed ${isExpanded ? " is-expanded " : " "}`}>
-            <Link className="active" to="/">
+            <Link className="active link" to="/" >
               <li>Home</li>
             </Link>
-            <Link className="active" to="/About">
+            <Link className="active link" to="/About"  >
               <li>About</li>
             </Link>
-            <Link className="active" to="/chart">
+            <Link className="active link" to="/chart">
               <li>Top viewed Products</li>
             </Link>
          
-            <Link to="/AddProduct">
+            <Link to="/AddProduct" className="link">
               {
                 (auth===true)?
                 <li>Add Products</li>:""
@@ -61,7 +61,7 @@ const Header = ({loginUsers,auth,logOut})=>{
               }
             </Link>
            
-            <Link to="/login" onClick={(e)=>handleLogout(e)}>
+            <Link to="/login"className="link" onClick={(e)=>handleLogout(e)}>
               {/* <li>Login</li> */}
               
               {

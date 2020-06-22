@@ -1,17 +1,22 @@
 import React, {useState} from 'react';
 import { Card, CardActionArea, CardActions, CardContent, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import {incrementCount} from '../../actions/productActions';
+import {incrementCount,selectProducts} from '../../actions/productActions';
 import {connect} from 'react-redux';
+
 import './product.scss';
 
 
 const Product = (props) => {
-     const [isActive, setActive] = useState(false);
-     const [array, setArray]=useState([]);
-     const [i, setI]=useState(0);
-    const {increment}=props
-    const  handleCount=(e)=>{
+
+         
+       
+         const {increment,select,auth}=props;
+        
+         const handleClick=(e)=>{
+             select(props.id);
+         }
+   const  handleCount=(e)=>{
       console.log(props.id);
        console.log(props.count);
          increment(props.id,props.count);
@@ -64,16 +69,31 @@ const Product = (props) => {
                             View Product Details
                      </Button>
                     </Link>
-                    <input type="checkbox" id={props.id} checked={props.value} onChange={handleChange}/><b>  Select to delete</b>
+
+                    {auth?
+                    <span>
+          <input
+            className="toggle-all"
+            type="checkbox"
+            onClick={(e)=>handleClick(e)}
+          />
+          <label >Select</label>
+        </span>:""}
+
                 </CardActions>
 
             </Card>
         </div>
     )
 }
-
-const MapDisPatchToProps =(dispatch)=>({
-    increment:(a,b)=>dispatch(incrementCount(a,b))
-    //selectProduct:(value)=>dispatch()
+const MapStateToProps=(state)=>({
+    productsCount:state.products.products.length,
+    auth:state.user.authBool,
+    
 })
-export default connect(null, MapDisPatchToProps) (Product);
+const MapDisPatchToProps =(dispatch)=>({
+
+    increment:(a,b)=>dispatch(incrementCount(a,b)),
+    select:(value)=>dispatch(selectProducts(value))
+})
+export default connect(MapStateToProps, MapDisPatchToProps) (Product);
