@@ -52,7 +52,9 @@
           "text": "Gamers have also provided with two 3W speakers that support Dolby surround sound technology and Hi-Res Audio standard."
         }
       ],
-      "count": 4
+
+      "count": 29
+
     },
     {
       "id": 3,
@@ -79,7 +81,7 @@
           "text": "The two buttons at the bottom of the shoe light up in the color of your choice while programming them, a feature that Tatum finds particularly interesting."
         }
       ],
-      "count": 4
+      "count": 7
     },
     {
       "id": 4,
@@ -160,7 +162,7 @@
           "text": "Note : Product is HOT AIR dryer , 2 Flexible Heat Setting for careful drying."
         }
       ],
-      "count": 1
+      "count": 2
     },
     {
       "id": 7,
@@ -265,7 +267,7 @@
           "text": "Size: 130*137*50mm"
         }
       ],
-      "count": 0
+      "count": 9
     },
     {
       "id": 11,
@@ -292,8 +294,9 @@
           "text": "Super bass, HD clarity, 40mm drivers, Battery type: Rechargeable 250mAh Li-polymer battery"
         }
       ],
-      "count": 0,
-      "value": false
+
+      "count": 1
+
     },
     {
       "id": 12,
@@ -344,7 +347,7 @@
     {
       "id": 16,
       "name": "Red Mi Note 7 Pro",
-      "description": "Another Chinese PHone Made in India",
+      "description": "Worst Chinese Phone Made in INdia",
       "manufacturer": "Xiaomi",
       "price": 13000,
       "quantity": 1,
@@ -357,25 +360,30 @@
           "text": "This Phone includes Cheapness that is availabe all over communist chinese."
         }
       ],
-      "value": false
+
+      "count": 1
+
     },
     {
       "id": 17,
-      "name": "Iphone 11 Pro",
-      "description": "Most Expensive Phone ,You Don't Have to sell Your Kidney.Just apply for loan",
-      "manufacturer": "Apple",
-      "price": 100000,
+      "name": "Power bank",
+      "description": "LIfe time battery backup",
+      "manufacturer": "Samsung",
+      "price": 10000,
       "quantity": 1,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload%20iphone.jpeg?alt=media&token=59dc1655-4b5a-4895-8c5c-1d7f280c72a6",
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload%20iphone.jpeg?alt=media&token=6d3279eb-3f53-4394-a03e-c199a80f9d91",
       "details": [
         {
-          "text": "Name and Brand is Enough."
+          "text": "sdzxfcgvhjbk"
         },
         {
-          "text": "Low features at Expensive price."
+          "text": "sadfghj"
+        },
+        {
+          "text": "dasssaddsasd,qewrtywerty,qwertyt,sdfgh,sdfgh,zxcvb"
         }
       ],
-      "value": false
+      "count": null
     }
   ]
 }
