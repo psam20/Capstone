@@ -1,15 +1,20 @@
 import React from 'react';
 import { Card, CardActionArea, CardActions, CardContent, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import {incrementCount} from '../../actions/productActions';
+import {incrementCount,selectProducts} from '../../actions/productActions';
 import {connect} from 'react-redux';
+
 import './product.scss';
 
 
 const Product = (props) => {
          
        
-         const {increment}=props
+         const {increment,select,auth}=props;
+        
+         const handleClick=(e)=>{
+             select(props.id);
+         }
    const  handleCount=(e)=>{
       console.log(props.id);
        console.log(props.count);
@@ -51,14 +56,28 @@ const Product = (props) => {
                             View Product Details
                      </Button>
                     </Link>
+                    {auth?
+                    <span>
+          <input
+            className="toggle-all"
+            type="checkbox"
+            onClick={(e)=>handleClick(e)}
+          />
+          <label >Select</label>
+        </span>:""}
                 </CardActions>
 
             </Card>
         </div>
     )
 }
-
-const MapDisPatchToProps =(dispatch)=>({
-    increment:(a,b)=>dispatch(incrementCount(a,b))
+const MapStateToProps=(state)=>({
+    productsCount:state.products.products.length,
+    auth:state.user.authBool,
+    
 })
-export default connect(null, MapDisPatchToProps) (Product);
+const MapDisPatchToProps =(dispatch)=>({
+    increment:(a,b)=>dispatch(incrementCount(a,b)),
+    select:(value)=>dispatch(selectProducts(value))
+})
+export default connect(MapStateToProps, MapDisPatchToProps) (Product);

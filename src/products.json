@@ -25,7 +25,9 @@
           "text": "Box also includes: Adapter, micro-USB cable, important information booklet with warranty card, quick guide, SIM card tool, screen protect film and case"
         }
       ],
-      "count": 18
+
+      "count": 22
+
     },
     {
       "id": 2,
@@ -52,7 +54,8 @@
           "text": "Gamers have also provided with two 3W speakers that support Dolby surround sound technology and Hi-Res Audio standard."
         }
       ],
-      "count": 29
+      "count": 36
+
     },
     {
       "id": 3,
@@ -79,7 +82,9 @@
           "text": "The two buttons at the bottom of the shoe light up in the color of your choice while programming them, a feature that Tatum finds particularly interesting."
         }
       ],
-      "count": 7
+
+      "count": 9
+
     },
     {
       "id": 4,
@@ -211,7 +216,7 @@
           "text": "Occasion:-Daily Wear,Party Wear,Valentine Gifts for Girlfriend Wife Lovers Birthday Anniversary Wedding Gifts For Some One You Love"
         }
       ],
-      "count": 0
+      "count": 1
     },
     {
       "id": 9,
@@ -238,7 +243,7 @@
           "text": "With natural white floral fragrance, help you clean face in a pleasant mood"
         }
       ],
-      "count": 0
+      "count": 2
     },
     {
       "id": 10,
@@ -292,7 +297,9 @@
           "text": "Super bass, HD clarity, 40mm drivers, Battery type: Rechargeable 250mAh Li-polymer battery"
         }
       ],
-      "count": 1
+
+      "count": 3
+
     },
     {
       "id": 12,
@@ -321,61 +328,6 @@
       ],
       "count": 2
     },
-    {
-      "id": 15,
-      "name": "Red MI Note 3 Pro",
-      "description": "Worst cheap product",
-      "manufacturer": "Xiaomi",
-      "price": 12000,
-      "quantity": 1,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload.jpeg?alt=media&token=b1a27730-37de-4c57-aa9e-fe933efa34ba",
-      "details": [
-        {
-          "text": "Chinese Product,Don't Buy."
-        },
-        {
-          "text": "please throw this phone as hard as you can SO THAT IT goes back to china and explode"
-        }
-      ]
-    },
-    {
-      "id": 16,
-      "name": "Red Mi Note 7 Pro",
-      "description": "Worst Chinese Phone Made in INdia",
-      "manufacturer": "Xiaomi",
-      "price": 13000,
-      "quantity": 1,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fxiaomi-redmi-note-7-pro-1.jpg?alt=media&token=c3caa350-f81b-4edf-96d1-c1c2e668813e",
-      "details": [
-        {
-          "text": "Throw this Phone Back to china , 100% china will die of shame."
-        },
-        {
-          "text": "This Phone includes Cheapness that is availabe all over communist chinese."
-        }
-      ],
-      "count": 1
-    },
-    {
-      "id": 17,
-      "name": "Power bank",
-      "description": "LIfe time battery backup",
-      "manufacturer": "Samsung",
-      "price": 10000,
-      "quantity": 1,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload%20iphone.jpeg?alt=media&token=6d3279eb-3f53-4394-a03e-c199a80f9d91",
-      "details": [
-        {
-          "text": "sdzxfcgvhjbk"
-        },
-        {
-          "text": "sadfghj"
-        },
-        {
-          "text": "dasssaddsasd,qewrtywerty,qwertyt,sdfgh,sdfgh,zxcvb"
-        }
-      ],
-      "count": null
-    }
+  
   ]
 }
