@@ -25,9 +25,7 @@
           "text": "Box also includes: Adapter, micro-USB cable, important information booklet with warranty card, quick guide, SIM card tool, screen protect film and case"
         }
       ],
-
       "count": 22
-
     },
     {
       "id": 2,
@@ -54,9 +52,7 @@
           "text": "Gamers have also provided with two 3W speakers that support Dolby surround sound technology and Hi-Res Audio standard."
         }
       ],
-
-      "count": 36
-
+      "count": 38
     },
     {
       "id": 3,
@@ -83,9 +79,7 @@
           "text": "The two buttons at the bottom of the shoe light up in the color of your choice while programming them, a feature that Tatum finds particularly interesting."
         }
       ],
-
       "count": 9
-
     },
     {
       "id": 4,
@@ -298,11 +292,7 @@
           "text": "Super bass, HD clarity, 40mm drivers, Battery type: Rechargeable 250mAh Li-polymer battery"
         }
       ],
-
-
       "count": 3
-
-
     },
     {
       "id": 12,
@@ -332,6 +322,49 @@
       "count": 2,
       "value": false
     },
-
+    {
+      "id": 13,
+      "name": "Iphone 11 Pro",
+      "description": " hello my favroite new",
+      "manufacturer": "Iphone",
+      "price": 123330,
+      "quantity": 1,
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload%20iphone.jpeg?alt=media&token=9b99e3a0-56bd-480b-9ab8-55ac5739862e",
+      "details": [
+        {
+          "text": "THIS IS AN IPHONE"
+        },
+        {
+          "text": "MOST EXPENSIVE PHONE"
+        }
+      ],
+      "count": null
+    },
+    {
+      "id": 14,
+      "name": "Moto G6",
+      "description": "This is a Moblie Phone",
+      "manufacturer": "Motorola",
+      "price": 12000,
+      "quantity": 12,
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload.jpeg?alt=media&token=b60db5e2-5725-438a-bb07-bd269f601df2",
+      "details": [
+        {
+          "text": "asdasdasd"
+        },
+        {
+          "text": "adadadsasdqweqe"
+        },
+        {
+          "text": "qeqweqweqwe"
+        },
+        {
+          "text": "bnhgfhfghfg"
+        },
+        {
+          "text": "sdsadsfdfsf"
+        }
+      ]
+    }
   ]
 }

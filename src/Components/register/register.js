@@ -108,6 +108,7 @@ class register extends React.Component{
 
             });
             console.log(response.data);
+            this.props.history.push('/login')
           })
           .catch(e => {
             console.log(e);

@@ -8,8 +8,7 @@ export const initialState={
     filteredProducts:[],
 
     count:0,
-    deleteBool:false,
-    selected:[],
+
 
 }
 

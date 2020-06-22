@@ -56,6 +56,10 @@ class Login extends React.Component{
                 const loginUser={
                     id:this.state.User[i].id,
                     firstName:this.state.User[i].firstName,
+                    lastName:this.state.User[i].lastName,
+                    email:this.state.User[i].email,
+                    location:this.state.User[i].location,
+                    mobile:this.state.User[i].mobile,
                     auth:true
                 }
              UserService.setUserLoggedIn(this.state.User[i].id)
