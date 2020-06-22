@@ -119,7 +119,7 @@ const AddProductPage = ({ addProducts }) => {
     };
 
     return (
-        <div className="col-md-6 user-container">
+        <div className="col-md-6">
             <h2>Add Product Page</h2>
 
             <form onSubmit={formik.handleSubmit}>

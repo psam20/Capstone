@@ -1,0 +1,23 @@
+.user-container{
+    font-family: 'Times New Roman', Times, serif;
+    width: 30%;
+}
+
+.userForm{
+    margin-left: 5%;
+}
+
+.heading{
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 823px){
+
+    .user-container{
+        font-family: 'Times New Roman', Times, serif;
+        width: 65%;
+    }
+}

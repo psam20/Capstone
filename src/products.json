@@ -52,7 +52,7 @@
           "text": "Gamers have also provided with two 3W speakers that support Dolby surround sound technology and Hi-Res Audio standard."
         }
       ],
-      "count": 3
+      "count": 4
     },
     {
       "id": 3,
@@ -373,24 +373,6 @@
         },
         {
           "text": "Low features at Expensive price."
-        }
-      ],
-      "value": false
-    },
-    {
-      "id": 21,
-      "name": "jdfhg",
-      "description": "hfhf",
-      "manufacturer": "ghfgh",
-      "price": 68,
-      "quantity": 8676,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Ffacewash.jpg?alt=media&token=ffb47e1a-043a-4ce2-b651-ac3a12f59252",
-      "details": [
-        {
-          "text": "hj"
-        },
-        {
-          "text": ""
         }
       ],
       "value": false

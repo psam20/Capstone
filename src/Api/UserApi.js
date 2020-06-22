@@ -10,8 +10,18 @@ class UserService {
    return http.get(this.url);
  }
  getById(id) {
-   return http.get(this.url + '' + id)
+   return http.get(this.url + id)
  }
+
+ setUserLoggedIn(Id) {
+  this.userId = Id;
+  console.log(this.userId);
+}
+
+getUserLoggedIn() {
+  console.log(this.userId);
+  return this.userId;
+}
 
 create(payLoad) {
    const httpOptions = {
@@ -26,15 +36,6 @@ create(payLoad) {
   delete(id) {
      return http.delete(this.url + id)
        .then((response) => response);
- }
- setUserLoggedIn(Id) {
-   this.userId = Id;
-   console.log(this.userId);
- }
-
- getUserLoggedIn() {
-   console.log(this.userId);
-   return this.userId;
  }
 }
 

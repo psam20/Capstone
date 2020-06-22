@@ -58,6 +58,8 @@ class Login extends React.Component{
                     firstName:this.state.User[i].firstName,
                     auth:true
                 }
+             UserService.setUserLoggedIn(this.state.User[i].id)
+             UserService.getUserLoggedIn();
               this.props.authUser(loginUser);
                return (<Redirect to="/"/>)
               
