@@ -2,17 +2,12 @@ import React from 'react';
 import './About.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-class About extends React.Component{
-    constructor(){
-        super();
-        this.state={
-            title: "About Us"
-        }
-    }
-    render(){
+const  About =()=>{
+   
+  
         return(
             <div>
-                <h3 className="head">{this.state.title}</h3>
+                <h3 className="head">About Us</h3>
                 <p className="para">
                     Shopify is an e-commerce company based in Bengaluru, Karnataka, India. 
                     It was founded in 2007. The company initially focused on book sales, 
@@ -35,6 +30,5 @@ class About extends React.Component{
                 </div>
              )
     }
-} 
 
 export default About;

@@ -1,39 +1,25 @@
 import React from 'react';
 import { useParams, useHistory, Link } from 'react-router-dom'
-import { Grid, Card, Typography, Button, Dialog, DialogActions, Slide, DialogTitle, DialogContent, DialogContentText } from '@material-ui/core';
+import { Grid, Card, Typography, Button } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import {addItem} from '../redux/actions/cartActions'
 import { connect } from 'react-redux';
-
-import { deleteProductsAxios } from '../actions/productActions';
-
+import { deleteProductsAxios } from '../redux/actions/productActions';
 import './productDetailsPage.scss';
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-});
 
-const ProductDetailsPage = ({ filtered, deleteProducts, auth }) => {
 
-    const [open, setOpen] = React.useState(false);
-    // const [count, setCount] = useState(0);
-    // const [flag, setFlag] = useState(0);
+const ProductDetailsPage = ({ filtered, deleteProducts, auth,addItem,loginUsers }) => {
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-    const handleClose = () => {
-        setOpen(false);
-    };
     const { id } = useParams();
     const history = useHistory();
     // console.log(filtered);
     const i = id.split("+");
     // console.log(i[0]);
     const selectedProduct = filtered.find(p => p.id.toString() === i[0].toString());
-    // console.log(selectedProduct);
+    console.log(selectedProduct);
 
     // console.log(selectedProduct.details)
 
@@ -41,7 +27,7 @@ const ProductDetailsPage = ({ filtered, deleteProducts, auth }) => {
 
     const deletePro = (e, id) => {
         e.preventDefault();
-        handleClickOpen();
+        
         deleteProducts(id);
         history.push('/');
     }
@@ -66,7 +52,7 @@ const ProductDetailsPage = ({ filtered, deleteProducts, auth }) => {
                     <br />
                     <div className="buttons">
                         <Link to={`/EditProduct/${selectedProduct.id}`}>
-                            {(auth === true) ? (
+                            {(auth === true && loginUsers.roleBool===true) ? (
                                 <Button
                                     variant="contained"
                                     color="primary"
@@ -78,7 +64,7 @@ const ProductDetailsPage = ({ filtered, deleteProducts, auth }) => {
                             }
 
                         </Link>
-                        {(auth === true) ? <Button
+                        {(auth === true && loginUsers.roleBool===true) ? <Button
                             variant="contained"
                             color="secondary"
                             onClick={e =>
@@ -89,29 +75,7 @@ const ProductDetailsPage = ({ filtered, deleteProducts, auth }) => {
                         >
                             Delete
       </Button> : ""}
-                        <Dialog
-                            open={open}
-                            TransitionComponent={Transition}
-                            keepMounted
-                            onClose={handleClose}
-                            aria-labelledby="alert-dialog-slide-title"
-                            aria-describedby="alert-dialog-slide-description"
-                        >
-                            <DialogTitle id="alert-dialog-slide-title">{"Products Deltion?"}</DialogTitle>
-                            <DialogContent>
-                                <DialogContentText id="alert-dialog-slide-description">
-                                    Are You Sure You Want to Delete this Product ?
-          </DialogContentText>
-                            </DialogContent>
-                            <DialogActions>
-                                <Button onClick={handleClose} color="primary">
-                                    Disagree
-          </Button>
-                                <Button onClick={handleClose} color="primary">
-                                    Agree
-          </Button>
-                            </DialogActions>
-                        </Dialog>
+                        
                     </div>
 
                 </Grid>
@@ -140,21 +104,12 @@ const ProductDetailsPage = ({ filtered, deleteProducts, auth }) => {
 
                     </div>
                     <div>
-                        <Button
-
-                            variant="contained"
-                            color="primary"
-                            startIcon={<ShoppingBasketIcon />}
-                        >
-                            Buy Product
-                        </Button>
-
-                        <br /><br />
+                     <br /><br />
                         <Button
                             variant="contained"
                             style={{ backgroundColor: "lightgrey" }}
 
-
+                            onClick={()=>addItem(selectedProduct)}
                             startIcon={<ShoppingCartIcon />}
                         >
                             Add To Cart
@@ -168,12 +123,14 @@ const ProductDetailsPage = ({ filtered, deleteProducts, auth }) => {
 const MapStateToProps = (state => ({
     products: state.products.products,
     filtered: state.products.filteredProducts,
+    loginUsers:state.user.currentUser,
     auth: state.user.authBool,
 }))
 
 const MapDispatchToProps = (dispatch) => {
     return {
         deleteProducts: (id) => dispatch(deleteProductsAxios(id)),
+        addItem:(item)=>dispatch(addItem(item)),
     }
 }
 export default connect(MapStateToProps, MapDispatchToProps)(ProductDetailsPage);

@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search'
-import {searchProducts} from '../../actions/productActions';
+import {searchProducts} from '../../redux/actions/productActions';
 import {connect} from 'react-redux';
 import './search.scss';
 import { useFormik } from 'formik';

@@ -1,9 +1,9 @@
-import React from 'react';
+ import React from 'react';
 import { useFormik } from 'formik';
 import { Prompt, useHistory } from 'react-router-dom';
 import { storage } from '../../Firebase/index';
 import { connect } from 'react-redux';
-import { addProductsAxios } from '../../actions/productActions';
+import { addProductsAxios } from '../../redux/actions/productActions';
 
 import TextInput from '../ReusableComponents/InputComponent';
 import UploadImage from '../ReusableComponents/uploadImage';

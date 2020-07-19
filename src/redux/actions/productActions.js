@@ -85,6 +85,7 @@ export  function addProductsAxios(pro){
       try{
           await Axios.post("http://localhost:3201/products",pro)
           dispatch(addProducts(pro));
+          dispatch(fetchProducts());
               
       }
       catch(error){
@@ -100,7 +101,8 @@ export  function addProductsAxios(pro){
           try{
              await Axios.put(`http://localhost:3201/products/${product.id}`,product)
              .then(res => console.log(res));
-             dispatch(EditProducts(product))
+             dispatch(EditProducts(product));
+             dispatch(fetchProducts());
           }
           catch(err){
               console.log(err);
@@ -115,6 +117,7 @@ export  function addProductsAxios(pro){
   
      await Axios.delete(`http://localhost:3201/products/${id}`)
              dispatch(deleteProducts(id))
+             dispatch(fetchProducts());
     }
     catch(err){
         console.log(err);

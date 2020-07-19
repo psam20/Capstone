@@ -1,62 +1,50 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-
-import { fetchProducts,deleteProductsAxios } from '../../actions/productActions';
+import { useSortData } from './sortConfig';
+import Dropdown from 'react-bootstrap/Dropdown'
 import { useEffect } from 'react';
-import Product from '../Product/products';
-import Button from '@material-ui/core/Button';
+import ProductsContainer from '../../Containers/productsContainer';
+
 import './product-d.scss';
 
-const ProductDirectory = ({fetchProducts,auth,filteredProducts,selectIds,deleteMultiple}) => {
+const ProductDirectory = ({ fetchProducts, filteredProducts }) => {
+
+    const { items, requestSort } = useSortData(filteredProducts);
     useEffect(() => {
         fetchProducts()
-    },[fetchProducts])
-  
-  
-  const  deleteProducts=(e)=>{
-        for(let i=0;i<selectIds.length;i++){
-            const id=selectIds[i];
-             deleteMultiple(id)
-        }
-        window.location.reload(false);
- 
+    }, [fetchProducts])
+    console.log(filteredProducts);
+    //  console.log(sortedProducts);
 
-
-    }
 
     return (
         <div className="containerDiv">
-        
-           {auth? <Button variant="contained"
-                color="primary" onClick={(e)=>deleteProducts(e)}>Delete</Button>:""}
+          <Dropdown style={{width:"20%"}}>
+  <Dropdown.Toggle variant="success" id="dropdown-basic">
+    Sort Products
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item onClick={() => requestSort('count')}>Sort Products By Popularity</Dropdown.Item>
+    <Dropdown.Item onClick={() => requestSort('name')}>Sort Products By Name</Dropdown.Item>
+    <Dropdown.Item onClick={() => requestSort('price')}>Sort Products By Price</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+            {/* <button onClick={() => requestSort('name')}>Sort Products By Name</button> */}
             <div className="productsDiv">
 
                 {
 
-                    filteredProducts.map(({ id, ...otherProps }) => (
-                        <Product key={id} id={id} {...otherProps} />
+                    items.map((item,id) => (
+                        <ProductsContainer key={id} item={item} />
                     ))
                 }
             </div>
         </div>
     )
 }
-const MapStateToProps = (state => ({
-    products: state.products.products,
-    loading: state.products.loading,
-    hasErrors: state.products.hasErrors,
-    filteredProducts: state.products.filteredProducts,
-    auth:state.user.authBool,
-    selectIds:state.selectedProduct.selected,
-}))
-const MapDispatchToProps=(dispatch)=>{
- return{  
-      deleteMultiple:(value)=>dispatch(deleteProductsAxios(value)),
-      fetchProducts:()=>dispatch(fetchProducts()),
-}
-}
 
 
-export default connect(MapStateToProps,MapDispatchToProps)(ProductDirectory);
+
+export default ProductDirectory;
 

@@ -19,62 +19,6 @@
       "id": "jhedkh"
     },
     {
-      "firstName": "nfbgnb",
-      "email": "jhj@nj.com",
-      "lastName": "hjgjmhg",
-      "password": "978576",
-      "location": "pune",
-      "value": false,
-      "id": "npqJ4Qa"
-    },
-    {
-      "firstName": "Kishan",
-      "email": "kg@gmail.com",
-      "lastName": "Gupta",
-      "password": "1",
-      "location": "Bangalore",
-      "value": false,
-      "id": "sw4FSg_"
-    },
-    {
-      "firstName": "Gaurav",
-      "email": "gs@gmail.com",
-      "lastName": "shaan",
-      "password": "1",
-      "location": "Bangalore",
-      "value": false,
-      "id": "u19aOtu"
-    },
-    {
-      "firstName": "Gaurav",
-      "email": "gs@gmail.com",
-      "lastName": "shaan",
-      "password": "1",
-      "location": "Bangalore",
-      "value": false,
-      "id": "Kc-Y8Lw"
-    },
-    {
-      "firstName": "Kishan",
-      "email": "",
-      "lastName": "",
-      "password": "",
-      "location": "",
-      "mobile": null,
-      "value": false,
-      "id": "epSlFBW"
-    },
-    {
-      "firstName": "Kishan",
-      "email": "k@gmail.com",
-      "lastName": "GUPTA",
-      "password": "1",
-      "location": "Bangalore",
-      "mobile": "8953547982",
-      "value": false,
-      "id": "yrX7uDR"
-    },
-    {
       "firstName": "Kishan",
       "email": "k@gmail.com",
       "lastName": "GUPTA",
@@ -85,14 +29,24 @@
       "id": "K7-dMIJ"
     },
     {
-      "firstName": "Rahul",
-      "email": "r@gmail.com",
-      "lastName": "Gupta",
+      "firstName": "KISHAN",
+      "role": "ADMIN",
+      "email": "kg@gmail.com",
+      "lastName": "GUPTA",
+      "password": "1",
+      "location": "Bangalore",
+      "mobile": "8953547982",
+      "value": false,
+      "id": "W_kpaYt"
+    },
+    {
+      "id": "P82NGDA",
+      "firstName": "Ojus",
+      "lastName": "Dev",
+      "email": "od@gmail.com",
       "password": "123456",
       "location": "Delhi",
-      "mobile": "7355710652",
-      "value": false,
-      "id": "nHtK8VC"
+      "mobile": "8953547982"
     }
   ]
 }

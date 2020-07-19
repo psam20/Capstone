@@ -1,18 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 import './Piechart.css';
 
-class PieChart extends React.Component {
+const PieChart = ({products}) => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: {}
-        }
-    }
+    const [data, setData] = React.useState({});
 
-    compareValues = (key, order = 'asc') => {
+    const compareValues = (key, order = 'asc') => {
         return function innerSort(a, b) {
             if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
                 // property doesn't exist on either object
@@ -35,58 +30,57 @@ class PieChart extends React.Component {
             );
         };
     }
-    componentDidMount() {
-        const TopFiveProducts = this.props.products.sort(this.compareValues("count", 'desc')).slice(0, 5);
+    useEffect(() => {
+        const TopFiveProducts = products.sort(compareValues("count", 'desc')).slice(0, 5);
         console.log(TopFiveProducts);
-        const name=TopFiveProducts.map((p)=>p.name.toUpperCase());
-        const count=TopFiveProducts.map(p=>p.count);
+        const name = TopFiveProducts.map((p) => p.name.toUpperCase());
+        const count = TopFiveProducts.map(p => p.count);
 
-        this.setState({
-                         data: {
-                             labels: name,
-                             datasets: [
-                                 {
-                                     label: 'Top viewed products',
-                                     data: count,
-                                     backgroundColor: [
-                                         "green",
-                                         "yellow",
-                                         "Blue",
-                                         "Red",
-                                         "pink"
-                                     ],
-                                     hoverBackgroundColor: [
-                                         "green",
-                                         "yellow",
-                                         "Blue",
-                                         "Red",
-                                         "pink"
-                                   ],
-                               }
-                           ]
-                         }
-                       });
+        setData({
+            labels: name,
+            datasets: [
+                {
+                    label: 'Top viewed products',
+                    data: count,
+                    backgroundColor: [
+                        "green",
+                        "yellow",
+                        "Blue",
+                        "Red",
+                        "pink"
+                    ],
+                    hoverBackgroundColor: [
+                        "green",
+                        "yellow",
+                        "Blue",
+                        "Red",
+                        "pink"
+                    ],
+                }
+            ]
+        }
+        );
 
-    }
+    },[products])
 
 
-    render() {
-        return (
-            <div>
-                <Pie width={400} height={500}
-                    data={this.state.data}
-                    options={
-                        { maintainAspectRatio: false }} />
-            </div>
-        )
-    }
-}   
 
-    const MapStateToProps = (state) => ({
-        products: state.products.products
-    })
+    return (
+        <div>
+            <Pie width={400} height={500}
+                data={data}
+                options={
+                    { maintainAspectRatio: false }} />
+        </div>
+    )
+}
 
-    export default connect(MapStateToProps)(PieChart);
+
+const MapStateToProps = (state) => ({
+    products: state.products.products
+})
+
+export default connect(MapStateToProps)(PieChart);
 
 
 

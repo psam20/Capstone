@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { useFormik } from 'formik';
 import TextInput from '../ReusableComponents/InputComponent';
 import UploadImage from '../ReusableComponents/uploadImage';
-import {updateProductsAxios} from '../../actions/productActions'
+import {updateProductsAxios} from '../../redux/actions/productActions'
 import { storage } from '../../Firebase/index';
 
 

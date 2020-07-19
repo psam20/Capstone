@@ -1,16 +1,12 @@
 import React from 'react';
-
+import Cart from '../CartDropdown/cart-dropdown';
 import {Menu,AddShoppingCart} from '@material-ui/icons';
-
 import {Link,useHistory} from 'react-router-dom';
-import {signOutUser} from '../../actions/usersAction'
-import {connect} from 'react-redux';
-
 import './navbar.scss';
-const Header = ({loginUsers,auth,logOut})=>{
+const Header = ({loginUsers,auth,logOut,toggleCart,hiddenCart,itemCount})=>{
     console.log(loginUsers);
     console.log(auth);
-    const history=useHistory();
+   const history=useHistory();
     // const auth=loginUsers.auth;
   const [isExpanded, setisExpanded]= React.useState(false);
    const handleToggle=(e)=>{
@@ -50,14 +46,14 @@ const Header = ({loginUsers,auth,logOut})=>{
          
             <Link to="/AddProduct" className="link">
               {
-                (auth===true)?
+                (auth===true && loginUsers.roleBool===true)?
                 <li>Add Products</li>:""
               }
             </Link>
-            <Link to="/Profile">
+            <Link to="/Profile" className="link">
               {
                 (auth===true)?
-                <li>My Profile</li>:""
+              <li>{loginUsers.firstName}</li>:""
               }
             </Link>
            
@@ -73,23 +69,18 @@ const Header = ({loginUsers,auth,logOut})=>{
           </ul>
         </nav>
         <nav className="nav1">
-          <div>
-            <span>0</span>
-          <Link to="/Cart" className="cart-icon">
+          <div onClick={toggleCart} >
+            <span>{itemCount}</span>
+          
               <AddShoppingCart fontSize="large"/>
-          </Link>
+      
           </div>
         </nav>
-        
+        { hiddenCart?null:
+        <Cart />
+         }
       </div>
   )
 }
 
-   const MapStateToProps=(state)=>({
-     loginUsers:state.user.currentUser,
-     auth:state.user.authBool
-   })
- const MapDispatchToProps=(dispatch)=>({
-   logOut:()=>dispatch(signOutUser())
- })
-export default  connect(MapStateToProps,MapDispatchToProps)(Header);
+export default Header;

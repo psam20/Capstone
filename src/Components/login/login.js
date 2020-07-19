@@ -1,117 +1,107 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {Link , Redirect} from 'react-router-dom';
-import {setCurrentUser} from '../../actions/usersAction';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import { setCurrentUser } from '../../redux/actions/usersAction';
 import UserService from "../../Api/UserApi";
-
-
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './login.css'
 
 
-class Login extends React.Component{
+const Login = ({authUser}) => {
 
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-            id:"",
-            email: "",
-            password: "",
-            submitted: false,
-            User:[],
-           
-        };
-      }
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [user, setUser] = useState([]);
+    const [submitted, setSubmitted] = useState(false);
 
-    componentDidMount() {
+    useEffect(() => {
         UserService.getAllUser()
             .then(response => {
-                this.setState({
-                    User: response.data
-                });
-                console.log(this.state.User)
+                setUser(response.data)
+            
             })
+
+    }, [])
+     console.log(user)
+    const Email = (e) => {
+        setEmail(e.target.value)
+
+    }
+    const Password = (e) => {
+        setPassword(e.target.value)
+
     }
 
-    Email=(event)=> {
-          this.setState({ email: event.target.value })
-    }
-        
-    Password=(event)=> {
-        this.setState({ password: event.target.value })
-    }
 
-    login=(e)=>{
+    const login = (e) => {
+        e.preventDefault();
+        setSubmitted(true)
+        if(email === '' && password === ''){
+            alert('Please Enter the Email and Password');
+            return
+        }
 
-    this.setState({submitted:true})
-     
+        user.map((u) => {
+            if (email === u.email && password === u.password) {
+                console.log(u);
+                const loginUser = {
+                    id: u.id,
+                    firstName: u.firstName,
+                    lastName: u.lastName,
+                    email: u.email,
+                    location: u.location,
+                    mobile: u.mobile,
+                    auth: true,
+                    roleBool: u.role ? true : 'false'
 
-       for(let i=0; i<this.state.User.length;i++){
-
-           if(this.state.email===this.state.User[i].email && 
-            this.state.password===this.state.User[i].password)
-           {
-              console.log(this.state.User[i]);
-                const loginUser={
-                    id:this.state.User[i].id,
-                    firstName:this.state.User[i].firstName,
-                    lastName:this.state.User[i].lastName,
-                    email:this.state.User[i].email,
-                    location:this.state.User[i].location,
-                    mobile:this.state.User[i].mobile,
-                    auth:true
                 }
-             UserService.setUserLoggedIn(this.state.User[i].id)
-             UserService.getUserLoggedIn();
-              this.props.authUser(loginUser);
-               return (<Redirect to="/"/>)
-              
+                UserService.setUserLoggedIn(u.id)
+                UserService.getUserLoggedIn();
+                authUser(loginUser);
            }
-       }
-       
-       alert("Incorrect PassWord , Please Enter Correct Password...")
-       console.log("unsuccessfull")
+         
+              return (<Redirect to="/" />)
+        })
 
-    }
-
-    render(){
-        const { email, password, submitted } = this.state;
-        return(
+        setPassword('');
+        setEmail('');
+ }
+    
+        return (
             <div className="container">
                 <div className="row-cols-1">
-                        <h2>New To Shopify</h2>
-                        <p style={{textAlign:"center",color:"blue"}}>Click On <Link to="/register">Register</Link> to Create an Account</p>
-               </div>
+                    <h2>New To Shopify</h2>
+                    <p style={{ textAlign: "center", color: "blue" }}>Click On <Link to="/register">Register</Link> to Create an Account</p>
+                </div>
                 <div className="row">
                     <div className="col-md-4 offset-md-4 mt-5">
-                        
+
                         <h2>Login</h2>
                         <form name="form">
                             <div className={'form-group' + (submitted && !email ? ' has-error' : '')}>
                                 <label htmlFor="email">Email Id</label>
                                 <input type="email" className="form-control"
-                                value={email}
-                                name = "email"
-                                required
-                                onChange={this.Email} />
+                                    value={email}
+                                    name="email"
+                                    required
+                                    onChange={(e)=>Email(e)} />
                                 {submitted && !email &&
                                     <div className="help-block">Email is required</div>
                                 }
                             </div>
-                            <div className={'form-group' + (this.state.submitted && !this.state.password ? ' has-error' : '')}>
+                            <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
                                 <label htmlFor="password">Password</label>
-                                <input type="password" className="form-control" 
-                                value={this.state.password}
-                                name = "password"
-                                required
-                                onChange={this.Password}/>
+                                <input type="password" className="form-control"
+                                    value={password}
+                                    name="password"
+                                    required
+                                    onChange={(e)=>Password(e)} />
                                 {submitted && !password &&
                                     <div className="help-block">Password is required</div>
                                 }
                             </div>
                             <div className="form-group">
-                                <button className="btn btn-success" onClick={this.login}>
+                                <button className="btn btn-success" onClick={(e)=>login(e)}>
                                     Sign In
                                 </button>
                             </div>
@@ -121,11 +111,11 @@ class Login extends React.Component{
             </div>
         )
     }
-}
 
-const MapDispatchToProps=(dispatch)=>({
-    authUser:(value)=>dispatch(setCurrentUser(value))
-})
 
-export default connect(null,MapDispatchToProps)(Login);
+    const MapDispatchToProps = (dispatch) => ({
+        authUser: (value) => dispatch(setCurrentUser(value))
+    })
+
+    export default connect(null, MapDispatchToProps)(Login);
 

@@ -28,11 +28,19 @@ export default function productsReducer(state=initialState,action) {
                 searchInput:action.payload.input,
                 filteredProducts:action.payload.filteredItems
             }
+        case constants.ADD_PRODUCT:
+            return {
+                ...state,
+                products:[...state.products,action.payload],
+                filteredProducts:[...state.filteredProducts,action.payload],
+            
+            }    
     
         case constants.DELETE_PRODUCT:
             return {
                 ...state,
-                products:[state.products.filter(p=> p.id !== action.payload.id)]
+                products:[state.products.filter(p=> p.id !== action.payload.id)],
+            
             }
          case constants.EDIT_PRODUCT:
              return {

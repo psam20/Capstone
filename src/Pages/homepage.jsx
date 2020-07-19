@@ -1,12 +1,12 @@
 import React from 'react';
 import './homepage.css';
 import Search from '../Components/Search-bar/Search-bar'
-import ProductDirectory from '../Components/ProductsDirectory/productDirectory';
+import ProductDirectoryContainer from '../Containers/productDirectoryContainer';
 const HomePage = ()=> {
     return (
         <div className="homepage">
           <Search />
-          <ProductDirectory /> 
+          <ProductDirectoryContainer /> 
         </div>
     )
 }

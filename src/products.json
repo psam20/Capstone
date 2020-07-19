@@ -5,7 +5,7 @@
       "name": "Realme 3",
       "description": "(Dynamic Black, 3GB RAM, 32GB Storage)",
       "manufacturer": "Sky Li",
-      "price": "15000",
+      "price": 15000,
       "quantity": "800",
       "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSq9_coI2dlwltnSCwfiuoIrTYKFQb4of1Rf-2VgAKpGr00TDd8&usqp=CAU",
       "details": [
@@ -25,14 +25,14 @@
           "text": "Box also includes: Adapter, micro-USB cable, important information booklet with warranty card, quick guide, SIM card tool, screen protect film and case"
         }
       ],
-      "count": 22
+      "count": 34
     },
     {
       "id": 2,
       "name": "Mi Gaming Laptop",
       "description": "With 144Hz Display, Up to 16GB RAM",
       "manufacturer": "Xiaomi Mi ",
-      "price": "87300",
+      "price": 87300,
       "quantity": "150",
       "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTUIGdTYctukLyi1S-VkF3JNGiPCNlleirG7DYsUvbuIMyHiSaf&usqp=CAU",
       "details": [
@@ -52,14 +52,14 @@
           "text": "Gamers have also provided with two 3W speakers that support Dolby surround sound technology and Hi-Res Audio standard."
         }
       ],
-      "count": 38
+      "count": 63
     },
     {
       "id": 3,
       "name": "Nike’s Adapt BB shoes",
       "description": "Nike has unveiled its first self-lacing smart basketball shoe.",
       "manufacturer": "Nike",
-      "price": "5000",
+      "price": 5000,
       "quantity": 200,
       "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8LGY7-xjE74Hal3uJp6MWRLHzXBBoBHEylw9oyUY804OcoJ-4&usqp=CAU",
       "details": [
@@ -79,7 +79,7 @@
           "text": "The two buttons at the bottom of the shoe light up in the color of your choice while programming them, a feature that Tatum finds particularly interesting."
         }
       ],
-      "count": 9
+      "count": 16
     },
     {
       "id": 4,
@@ -87,7 +87,7 @@
       "description": "Gabbar ® A1 Bluetooth 4G Touch Screen Watch",
       "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBk7zBb1O8BTcL7j3iOkZzeIgC54kWekMRR44XAspJ918u_Tfb&usqp=CAU",
       "manufacturer": "Gabbar",
-      "price": "3000",
+      "price": 3000,
       "quantity": "400",
       "details": [
         {
@@ -106,7 +106,7 @@
           "text": "MP3,MP4,Camera."
         }
       ],
-      "count": 4
+      "count": 8
     },
     {
       "id": 5,
@@ -114,7 +114,7 @@
       "description": "Our new VanGoddy Pallia Women's Satchel Handbag.",
       "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSFQ4xscmpPich_xk49XZURrk7z78GN-i1G-7__icWg6EIPQAcQ&usqp=CAU",
       "manufacturer": "Pallia",
-      "price": "1500",
+      "price": 1500,
       "quantity": "250",
       "details": [
         {
@@ -136,39 +136,12 @@
       "count": 6
     },
     {
-      "id": 6,
-      "name": "Philips HP8100/46 Hair Dryer (Purple)",
-      "description": "Cleverly designed, easy to handle and lightweight.",
-      "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdGBz4-Mr9ItfnHaTKT49afsjZoqE3ifZMb4GOz-YN8WxnfLdV&usqp=CAU",
-      "manufacturer": "Philips",
-      "price": "6000",
-      "quantity": "450",
-      "details": [
-        {
-          "text": "Advanced concentrator technology with quick-heat head."
-        },
-        {
-          "text": "Thermo protect temperature setting: The ThermoProtect temperature provides the optimal drying temperature and gives additional protection from overheating the hair."
-        },
-        {
-          "text": "Not cordless, 1.5-meter power cord."
-        },
-        {
-          "text": "Compact design for easy handling; easy storage hook for convenient storage."
-        },
-        {
-          "text": "Note : Product is HOT AIR dryer , 2 Flexible Heat Setting for careful drying."
-        }
-      ],
-      "count": 2
-    },
-    {
       "id": 7,
       "name": "Nike Brasilia 6 Duffel Bag",
       "description": "The Nike Brasilia 6 (Small) Duffel Bag has a compact design that's big on function.",
       "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRf8gkNSKWKYIhR_Dpzdsb5In4MfxjWXlkN5zZa02I56FV36c0B&usqp=CAU",
       "manufacturer": "Nike",
-      "price": "2500",
+      "price": 2500,
       "quantity": "800",
       "details": [
         {
@@ -184,7 +157,7 @@
           "text": "Bottom lugs for protection"
         }
       ],
-      "count": 1
+      "count": 4
     },
     {
       "id": 8,
@@ -211,7 +184,7 @@
           "text": "Occasion:-Daily Wear,Party Wear,Valentine Gifts for Girlfriend Wife Lovers Birthday Anniversary Wedding Gifts For Some One You Love"
         }
       ],
-      "count": 1
+      "count": 3
     },
     {
       "id": 9,
@@ -219,7 +192,7 @@
       "description": "A nourishing beauty serum that replenishes skin* from deep within giving it a beautiful bounce.",
       "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJOURetawH5dp8e5fOe9zOGHVTG7CCR-rjx0L70TCxnOBx_1dR&usqp=CAU",
       "manufacturer": "Dove",
-      "price": "280",
+      "price": 280,
       "quantity": "1000",
       "details": [
         {
@@ -238,133 +211,28 @@
           "text": "With natural white floral fragrance, help you clean face in a pleasant mood"
         }
       ],
-      "count": 2
-    },
-    {
-      "id": 10,
-      "name": "Techhark Stylish Sunglass",
-      "description": "Techhark stylish unisex sky blue sunglasses with free size eye protected goggles.",
-      "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRbpqZd8dIXCsAT4ZtUlIXCdm7NR5W7-gK6ufT8Ogh5fy1JVJhG&usqp=CAU",
-      "manufacturer": "Techhark",
-      "price": "1500",
-      "quantity": "700",
-      "details": [
-        {
-          "text": "POLARIZED LENS - Polarized sunglasses reduce glare reflected off of roads bodies of water snow and other horizontal surfaces. Restore true color eliminate reflected light and scattered light and protect eyes perfectly. Polarized sunglasses cut glare and haze so your eyes are more comfortable and you can see better."
-        },
-        {
-          "text": "Newest DesignIt is Suitable For Any Face Show Your Unique And High-end Taste."
-        },
-        {
-          "text": "Suitable- Houseboat Driving Running FishingRacing Skiing and Climbing Trekking and Business Or Other Outdoor Activities Enthusiasts."
-        },
-        {
-          "text": "Color: Black-Black Silver-Gray Gold-Gray Silver-White Gold-Gold Silver-Blue Gold-Green Gold-Colorful Gold-Pink Gold-Blue Gold-Purple Silver-Green Gold-Red Black-White Gold-Green Silver-Brown Gray-Gray Gold-Green Gray-Green Gold"
-        },
-        {
-          "text": "Size: 130*137*50mm"
-        }
-      ],
-      "count": 9
-    },
-    {
-      "id": 11,
-      "name": "Boat's Headphones",
-      "description": "Boat Super Bass Rockerz 400 Bluetooth On-Ear Headphones with Mic (Black/Blue).",
-      "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTTcsIbF9fTGtK8AqVE14maUzTTU4KlszoLPzY86ijBN4QSVzo&usqp=CAU",
-      "manufacturer": "Boat",
-      "price": "3500",
-      "quantity": "600",
-      "details": [
-        {
-          "text": "Bluetooth connectivity, Playing time: Up to 8 hours, Standby time: About 100 hours"
-        },
-        {
-          "text": "Compatible with all mobiles, laptops and tablets"
-        },
-        {
-          "text": "Noise cancelling microphone, Operation Range: 10 meters"
-        },
-        {
-          "text": "1 year Manufacturer warranty"
-        },
-        {
-          "text": "Super bass, HD clarity, 40mm drivers, Battery type: Rechargeable 250mAh Li-polymer battery"
-        }
-      ],
       "count": 3
     },
     {
-      "id": 12,
-      "name": "Toshiba U202 16GB USB 2.0 Pendrive (Blue)",
-      "description": "Small sized and lightweight with data protection software",
-      "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTrm-YfAve6MfHRcTyoCTquwv6j8ygDg3dw7CJAydm-P4h7-nns&usqp=CAU",
-      "manufacturer": "Toshiba",
-      "price": "800",
-      "quantity": "450",
-      "details": [
-        {
-          "text": "Small sized and lightweight"
-        },
-        {
-          "text": "Data protection software"
-        },
-        {
-          "text": "Use for: PCs"
-        },
-        {
-          "text": "Practical and portable"
-        },
-        {
-          "text": "Storage made safer"
-        }
-      ],
-      "count": 2,
-      "value": false
-    },
-    {
-      "id": 13,
-      "name": "Iphone 11 Pro",
-      "description": " hello my favroite new",
-      "manufacturer": "Iphone",
-      "price": 123330,
-      "quantity": 1,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload%20iphone.jpeg?alt=media&token=9b99e3a0-56bd-480b-9ab8-55ac5739862e",
-      "details": [
-        {
-          "text": "THIS IS AN IPHONE"
-        },
-        {
-          "text": "MOST EXPENSIVE PHONE"
-        }
-      ],
-      "count": null
-    },
-    {
-      "id": 14,
+      "id": 10,
       "name": "Moto G6",
       "description": "This is a Moblie Phone",
       "manufacturer": "Motorola",
-      "price": 12000,
+      "price": 12333,
       "quantity": 12,
-      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload.jpeg?alt=media&token=b60db5e2-5725-438a-bb07-bd269f601df2",
+      "href": "https://firebasestorage.googleapis.com/v0/b/capstone-f41a7.appspot.com/o/images%2Fdownload.jpeg?alt=media&token=2855074a-9131-4f7a-b087-0a6d1c9eb642",
       "details": [
         {
-          "text": "asdasdasd"
+          "text": "sdasd"
         },
         {
-          "text": "adadadsasdqweqe"
+          "text": "dsdddd"
         },
         {
-          "text": "qeqweqweqwe"
-        },
-        {
-          "text": "bnhgfhfghfg"
-        },
-        {
-          "text": "sdsadsfdfsf"
+          "text": "ddddd"
         }
-      ]
+      ],
+      "count": 1
     }
   ]
 }
